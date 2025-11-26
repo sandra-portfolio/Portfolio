@@ -12109,4 +12109,10 @@ body .landing-page .hero-wrapper .hero-content .hero-row .hero-image-container {
   text-align: right;
 }
 body .landing-page .hero-wrapper .hero-content .hero-row .hero-image-container .hero-image {
-  
+  width: 300px;
+  height: auto;
+  position: relative;
+  z-index: 6;
+}
+
+/*# sourceMappingURL=styles.css.map */
