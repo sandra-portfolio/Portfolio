@@ -1,0 +1,237 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "fonts";
+
+/* FIRA CODE */
+@include define-font('Fira Code', 'Fira_Code/static', 'FiraCode-Regular.ttf', 400);
+@include define-font('Fira Code', 'Fira_Code/static', 'FiraCode-Medium.ttf', 500);
+@include define-font('Fira Code', 'Fira_Code/static', 'FiraCode-SemiBold.ttf', 600);
+@include define-font('Fira Code', 'Fira_Code/static', 'FiraCode-Bold.ttf', 700);
+
+
+/* ROBOTO */
+@include define-font('Roboto', 'Roboto/static', 'Roboto-Light.ttf', 300);
+@include define-font('Roboto', 'Roboto/static', 'Roboto-Regular.ttf', 400);
+@include define-font('Roboto', 'Roboto/static', 'Roboto-Medium.ttf', 500);
+@include define-font('Roboto', 'Roboto/static', 'Roboto-Bold.ttf', 700);
+
+
+/* ROBOTO SLAB */
+@include define-font('Roboto Slab', 'Roboto_Slab/static', 'RobotoSlab-Light.ttf', 300);
+@include define-font('Roboto Slab', 'Roboto_Slab/static', 'RobotoSlab-Regular.ttf', 400);
+@include define-font('Roboto Slab', 'Roboto_Slab/static', 'RobotoSlab-Medium.ttf', 500);
+@include define-font('Roboto Slab', 'Roboto_Slab/static', 'RobotoSlab-Bold.ttf', 700);
+
+//Colors
+$color-bg: #F9F9F9;
+$color-primary: #2A363B;
+$color-secondary: #698F8F;
+$color-accent: #D4AC64;
+$color-tertiary: #D1C8C2;
+
+//VARIABLE MAXIMALE INHALTSBREITE
+$max-content-width: 1320px;
+
+/* --- ZENTRALER MAX-BREITEN CONTAINER --- */
+// Wir erstellen einen Mixin für die wiederverwendbare Logik
+@mixin limit-content-width {
+  max-width: $max-content-width;
+  margin-left: auto; // Zentriert den Container
+  margin-right: auto; // Zentriert den Container
+}
+
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  background-color: $color-bg;
+
+  .landing-page {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    .navigation {
+      background-color: $color-primary;
+      padding: 1.5rem 4rem;
+
+      .nav-row {
+        height: 100%;
+        @include limit-content-width;
+
+        .logo-container {
+          display: flex;
+          align-items: center;
+          height: 100%;
+
+          .logo {
+            height: 25px;
+          }
+
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+          justify-content: flex-end;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+
+            &:hover {
+              color: $color-accent;
+              // Optionale Unterstreichung bei Hover
+              border-bottom: 2px solid $color-accent;
+            }
+          }
+
+          .dropdown {
+            position: relative;
+            /* Anchor für das absolute Menü */
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            /* Der Dropdown-Toggle-Link erbt alle 'a'-Styles, das ist korrekt */
+
+            /* Das versteckte Untermenü */
+            .dropdown-menu {
+              position: absolute;
+              top: 100%;
+              /* Platziert das Menü direkt unter dem Link */
+              left: 50%;
+              transform: translateX(-50%);
+              /* Zentriert das Menü unter dem Link */
+              z-index: 1000;
+
+              /* Styling des Menü-Containers */
+              background-color: lighten($color-primary, 5%);
+              min-width: 180px;
+              padding: 5px 0;
+              border-radius: 4px;
+              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+
+              /* Verbergen durch Opacity und Visibility */
+              opacity: 0;
+              visibility: hidden;
+              transition: opacity 0.3s ease, visibility 0.3s ease;
+
+              /* Vertikale Anordnung der Unterpunkte */
+              display: flex;
+              flex-direction: column;
+
+              /* Links im Untermenü */
+              a {
+                padding: 10px 15px;
+                text-align: left;
+                width: 100%;
+                font-size: 0.95rem;
+                text-transform: none;
+                /* Keine Großbuchstaben */
+                font-weight: 400;
+
+                /* Unterpunkte haben keinen Bottom-Border */
+                border-bottom: none;
+
+                &:hover {
+                  color: $color-accent;
+                  background-color: lighten($color-primary, 15%);
+                }
+              }
+            }
+
+            /* Dropdown beim Hovern anzeigen */
+            &:hover .dropdown-menu {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+
+    .hero-wrapper {
+      position: relative;
+      width: 100vw;
+      overflow: hidden;
+      min-height: 360px;
+
+      // Linke Seite (dunkel + Schrägschnitt)
+      .hero-bg-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 60vw;
+        height: 100%;
+        background: $color-primary;
+        clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+        z-index:1;
+      }
+
+      // Rechte Seite (Hintergrundgrafik)
+      .hero-bg-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60vw;
+        height: 100%;
+        background-image: url("../../images/Triangle_pattern.png");
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+      }
+
+      // Der begrenzte Inhalt (Bootstrap-Container)
+      .hero-content {
+        position: relative;
+        z-index: 5;
+        padding-top: 6rem;
+
+        .hero-row {
+          display: flex;
+
+          .hero-text {
+            color:#fff;
+            .supertitle {
+              font-size: 1rem;
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              color: $color-tertiary;
+              margin-bottom: 0.5rem;
+            }
+
+            .hero-title {
+              font-family: "Roboto Slab", serif;
+              font-size: 3.5rem;
+              font-weight: 700;
+              line-height: 1.1;
+              margin-bottom: 0;
+              // Schatten in der Akzentfarbe
+              text-shadow: 4px 2px 0 $color-secondary;
+            }
+          }
+
+          .hero-image-container {
+            text-align: right;
+            .hero-image {
+              width: 300px;
+              height: auto;
+              position: relative;
+              z-index: 6;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
