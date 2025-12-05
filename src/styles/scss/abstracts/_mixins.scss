@@ -1,0 +1,43 @@
+@use "variables" as var;
+
+/* --- ZENTRALER MAX-BREITEN CONTAINER --- */
+// Wir erstellen einen Mixin für die wiederverwendbare Logik
+@mixin limit-content-width {
+  max-width: var.$max-content-width;
+  margin-left: auto; // Zentriert den Container
+  margin-right: auto; // Zentriert den Container
+}
+
+
+// Eine Mixin-Funktion, die die @font-face Regeln erzeugt
+/* Mixin zur Definition einer Schriftfamilie */
+@mixin define-font($name, $path-segment, $file, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: $name;
+    // Pfad wird aus den Variablen zusammengesetzt
+    src: url('../../fonts/#{$path-segment}/#{$file}') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+// --- DAS MIXIN ERZEUGT DEN SCHATTEN ---
+@mixin create-3d-shadow($color, $depth-max) {
+    $shadow-list: (); // Leere Liste, um die Schattenwerte zu speichern
+
+    // Definiert den Kontrastrand: 0 0 0 1px #212121
+    $outline-value: 0  0 var.$outline-size var.$outline-color; // 0 Versatz, 0 Unschärfe, $outline-size Dicke
+    $shadow-list: append($shadow-list,$outline-value, comma);
+
+    @for $i from 1 through $depth-max {
+        // Erstellt den einzelnen Schattenwert: "1px 1px 0 #212121"
+        $shadow-value: #{$i}px #{$i}px 0 $color; 
+        
+        // Fügt den Wert zur Liste hinzu
+        $shadow-list: append($shadow-list, $shadow-value, comma); 
+    }
+    
+    // Gibt die gesamte Liste der Schattenwerte an die CSS-Eigenschaft aus
+    text-shadow: $shadow-list;
+}

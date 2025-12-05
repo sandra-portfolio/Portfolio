@@ -1,0 +1,27 @@
+// 1. ANBIETER-STILE
+@use "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@use "../../fonts/lucide-static/font/lucide.scss";
+
+
+// 2. ABSTRACTS
+@use 'abstracts/variables' as var; // Alias: 'var'
+@use 'abstracts/mixins' as mix;    // Alias: 'mix'
+
+
+// 3. LAYOUT
+@use 'layout/navigation';
+@use 'layout/footer';
+
+
+//4. COMPONENTS
+@use 'components/heading';
+
+
+// 5. BASE 
+@use 'base/fonts'; // Hier sind die @font-face Regeln und allgemeine Typografie
+@use 'base/typography';
+
+
+// 6. PAGES 
+@use 'pages/index';
+@use 'pages/figma';

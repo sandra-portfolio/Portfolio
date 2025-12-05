@@ -1,0 +1,162 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+/* --- Figma Page --- */
+
+.hero-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 360px;
+
+    // Linke Seite (dunkel + Schrägschnitt)
+    .hero-bg-left-page {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 60vw;
+        height: 100%;
+        background-image: url("../../images/Triangle_pattern.png");
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+        position: absolute;
+    }
+
+    // Rechte Seite (Hintergrundgrafik)
+    .hero-bg-right-page {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60vw;
+        height: 100%;
+        background: var.$color-primary;
+        clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 5;
+        padding: 3rem 0;
+
+        .heading {
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff;
+            font-family: "Roboto", sans-serif;
+            font-size: 300px;
+            font-weight: 900;
+            text-shadow: 3px 3px 0 var.$color-secondary;
+            @include mix.create-3d-shadow(var.$color-secondary, var.$depth);
+
+        }
+    }
+}
+
+.main-content {
+    .learnings {
+        padding: 4rem 0;
+
+        .learnings-content {
+            border: 1px solid #dedede;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+            background-color: #fff;
+            padding: 40px;
+
+            .row {
+                margin: 0;
+
+                .col-md-6 {
+                    i {
+                        font-size: 3rem;
+                        color: var.$color-accent;
+
+                    }
+
+                    .learnings-heading {
+                        font-family: "Roboto Slab", serif;
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        margin-bottom: 2rem;
+                        text-transform: uppercase;
+                    }
+
+                    .cursive {
+                        font-weight: 900;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .my-work-container {
+        background-image: url(../../images/Triangle_pattern.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .my-work {
+            padding: 4rem 0;
+
+            /* Hover-Effekt für Projektkarten */
+            .project-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    /* !important kann hier verwendet werden, um Bootstrap-Utilities zu überschreiben,
+           wird aber in SCSS-Custom-Styles meist vermieden. */
+                    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                }
+
+                .project-image-container {
+                    overflow: hidden;
+                    aspect-ratio: 4 / 3;
+                    /* Behält das 4:3 Seitenverhältnis bei */
+                }
+
+                .project-image {
+                    transition: transform 0.5s ease;
+
+                    /* Wenn die Elternkarte gehovert wird, skaliere das Bild */
+                    .project-card:hover & {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+
+            /* Modal-Anpassungen für das "Dark Lightbox" Gefühl */
+            .modal-fullscreen-dark {
+                /* Nutzt Bootstrap Custom Properties (CSS Variables) */
+                --bs-modal-bg: rgba(0, 0, 0, 0.95);
+                /* Dunkler, halbtransparenter Hintergrund */
+                backdrop-filter: blur(8px);
+            }
+
+            .modal-content-inner {
+                background-color: #1f2937;
+                /* Dunkelgrau für den Inhaltsbereich */
+                color: #e5e7eb;
+                max-width: 1200px;
+                width: 90vw;
+                max-height: 90vh;
+            }
+
+            .btn-close-white {
+                color: #e5e7eb;
+                opacity: 0.8;
+                transition: transform 0.2s;
+
+                &:hover {
+                    opacity: 1;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
+}

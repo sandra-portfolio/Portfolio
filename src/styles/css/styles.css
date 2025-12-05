@@ -11859,7 +11859,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/* Mixin zur Definition einer Schriftfamilie */
 @font-face {
   font-family: "lucide";
   src: url("lucide.eot?t=1764145870148"); /* IE9*/
@@ -18477,12 +18476,124 @@ textarea.form-control-lg {
   content: "\e1b7";
 }
 
-@font-face {
-  font-family: "lucide";
-  src: url("../../fonts/lucide-static/font/lucide.eot");
-  /* IE9*/
-  src: url("../../fonts/lucide-static/font/lucide.eot") format("embedded-opentype"), url("../../fonts/lucide-static/font/lucide.woff2") format("woff2"), url("../../fonts/lucide-static/font/lucide.woff") format("woff"), url("../../fonts/lucide-static/font/lucide.ttf") format("truetype"), url("../../fonts/lucide-static/font/lucide.svg") format("svg");
+/* --- ZENTRALER MAX-BREITEN CONTAINER --- */
+/* Mixin zur Definition einer Schriftfamilie */
+.navigation {
+  background-color: #2A363B;
+  padding: 1.5rem 4rem;
 }
+.navigation .nav-row {
+  height: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navigation .nav-row .logo-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.navigation .nav-row .logo-container .logo {
+  height: 25px;
+}
+.navigation .nav-row .nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+.navigation .nav-row .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+}
+.navigation .nav-row .nav-links a:hover {
+  color: #D4AC64;
+  border-bottom: 2px solid #D4AC64;
+}
+.navigation .nav-row .nav-links .dropdown {
+  position: relative;
+  /* Anchor für das absolute Menü */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* Der Dropdown-Toggle-Link erbt alle 'a'-Styles, das ist korrekt */
+  /* Das versteckte Untermenü */
+}
+.navigation .nav-row .nav-links .dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  /* Platziert das Menü direkt unter dem Link */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Zentriert das Menü unter dem Link */
+  z-index: 1000;
+  /* Styling des Menü-Containers */
+  background-color: rgb(52.603960396, 67.6336633663, 73.896039604);
+  min-width: 180px;
+  padding: 5px 0;
+  border-radius: 4px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Verbergen durch Opacity und Visibility */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  /* Vertikale Anordnung der Unterpunkte */
+  display: flex;
+  flex-direction: column;
+  /* Links im Untermenü */
+}
+.navigation .nav-row .nav-links .dropdown .dropdown-menu a {
+  padding: 10px 15px;
+  text-align: left;
+  width: 100%;
+  font-size: 0.95rem;
+  text-transform: none;
+  /* Keine Großbuchstaben */
+  font-weight: 400;
+  /* Unterpunkte haben keinen Bottom-Border */
+  border-bottom: none;
+}
+.navigation .nav-row .nav-links .dropdown .dropdown-menu a:hover {
+  color: #D4AC64;
+  background-color: rgb(73.8118811881, 94.900990099, 103.6881188119);
+}
+.navigation .nav-row .nav-links .dropdown {
+  /* Dropdown beim Hovern anzeigen */
+}
+.navigation .nav-row .nav-links .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer {
+  background-color: #2A363B;
+  color: #fff;
+  padding: 20px 0;
+  font-size: 14px;
+}
+.footer .footer-links {
+  text-align: right;
+}
+.footer .footer-links a {
+  color: inherit;
+  margin-right: 10px;
+}
+
+.heading {
+  font-family: "Roboto Slab", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
 /* FIRA CODE */
 @font-face {
   font-family: "Fira Code";
@@ -18570,117 +18681,30 @@ textarea.form-control-lg {
   font-style: normal;
   font-display: swap;
 }
-/* --- ZENTRALER MAX-BREITEN CONTAINER --- */
+/* LUCIDE ICONS */
+@font-face {
+  font-family: "lucide";
+  src: url("../../fonts/lucide-static/font/lucide.eot");
+  /* IE9*/
+  src: url("../../fonts/lucide-static/font/lucide.eot") format("embedded-opentype"), url("../../fonts/lucide-static/font/lucide.woff2") format("woff2"), url("../../fonts/lucide-static/font/lucide.woff") format("woff"), url("../../fonts/lucide-static/font/lucide.ttf") format("truetype"), url("../../fonts/lucide-static/font/lucide.svg") format("svg");
+}
 body {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 300;
   font-size: 18px;
   background-color: #F9F9F9;
-}
-body .landing-page {
   width: 100%;
   padding: 0;
   margin: 0;
 }
-body .landing-page .navigation {
-  background-color: #2A363B;
-  padding: 1.5rem 4rem;
-}
-body .landing-page .navigation .nav-row {
-  height: 100%;
-  max-width: 1320px;
-  margin-left: auto;
-  margin-right: auto;
-}
-body .landing-page .navigation .nav-row .logo-container {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-body .landing-page .navigation .nav-row .logo-container .logo {
-  height: 25px;
-}
-body .landing-page .navigation .nav-row .nav-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: flex-end;
-}
-body .landing-page .navigation .nav-row .nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: color 0.3s ease;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 4px;
-}
-body .landing-page .navigation .nav-row .nav-links a:hover {
-  color: #D4AC64;
-  border-bottom: 2px solid #D4AC64;
-}
-body .landing-page .navigation .nav-row .nav-links .dropdown {
-  position: relative;
-  /* Anchor für das absolute Menü */
-  height: 100%;
-  display: flex;
-  align-items: center;
-  /* Der Dropdown-Toggle-Link erbt alle 'a'-Styles, das ist korrekt */
-  /* Das versteckte Untermenü */
-}
-body .landing-page .navigation .nav-row .nav-links .dropdown .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  /* Platziert das Menü direkt unter dem Link */
-  left: 50%;
-  transform: translateX(-50%);
-  /* Zentriert das Menü unter dem Link */
-  z-index: 1000;
-  /* Styling des Menü-Containers */
-  background-color: rgb(52.603960396, 67.6336633663, 73.896039604);
-  min-width: 180px;
-  padding: 5px 0;
-  border-radius: 4px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-  /* Verbergen durch Opacity und Visibility */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  /* Vertikale Anordnung der Unterpunkte */
-  display: flex;
-  flex-direction: column;
-  /* Links im Untermenü */
-}
-body .landing-page .navigation .nav-row .nav-links .dropdown .dropdown-menu a {
-  padding: 10px 15px;
-  text-align: left;
-  width: 100%;
-  font-size: 0.95rem;
-  text-transform: none;
-  /* Keine Großbuchstaben */
-  font-weight: 400;
-  /* Unterpunkte haben keinen Bottom-Border */
-  border-bottom: none;
-}
-body .landing-page .navigation .nav-row .nav-links .dropdown .dropdown-menu a:hover {
-  color: #D4AC64;
-  background-color: rgb(73.8118811881, 94.900990099, 103.6881188119);
-}
-body .landing-page .navigation .nav-row .nav-links .dropdown {
-  /* Dropdown beim Hovern anzeigen */
-}
-body .landing-page .navigation .nav-row .nav-links .dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-}
-body .landing-page .hero-wrapper {
+
+/* --- Landing Page --- */
+.hero-wrapper {
   position: relative;
   overflow: hidden;
   min-height: 360px;
 }
-body .landing-page .hero-wrapper .hero-bg-left {
+.hero-wrapper .hero-bg-left {
   position: absolute;
   left: 0;
   top: 0;
@@ -18690,7 +18714,7 @@ body .landing-page .hero-wrapper .hero-bg-left {
   clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
   z-index: 1;
 }
-body .landing-page .hero-wrapper .hero-bg-right {
+.hero-wrapper .hero-bg-right {
   position: absolute;
   right: 0;
   top: 0;
@@ -18701,18 +18725,18 @@ body .landing-page .hero-wrapper .hero-bg-right {
   background-position: center;
   z-index: 0;
 }
-body .landing-page .hero-wrapper .hero-content {
+.hero-wrapper .hero-content {
   position: relative;
   z-index: 5;
   padding-top: 6rem;
 }
-body .landing-page .hero-wrapper .hero-content .hero-row {
+.hero-wrapper .hero-content .hero-row {
   display: flex;
 }
-body .landing-page .hero-wrapper .hero-content .hero-row .hero-text {
+.hero-wrapper .hero-content .hero-row .hero-text {
   color: #fff;
 }
-body .landing-page .hero-wrapper .hero-content .hero-row .hero-text .supertitle {
+.hero-wrapper .hero-content .hero-row .hero-text .supertitle {
   font-family: "Fira Code", monospace;
   font-weight: 600;
   font-size: 1rem;
@@ -18721,7 +18745,7 @@ body .landing-page .hero-wrapper .hero-content .hero-row .hero-text .supertitle 
   color: #D1C8C2;
   margin-bottom: 0.5rem;
 }
-body .landing-page .hero-wrapper .hero-content .hero-row .hero-text .hero-title {
+.hero-wrapper .hero-content .hero-row .hero-text .hero-title {
   font-family: "Roboto Slab", serif;
   font-size: 3.5rem;
   font-weight: 700;
@@ -18729,31 +18753,32 @@ body .landing-page .hero-wrapper .hero-content .hero-row .hero-text .hero-title 
   margin-bottom: 0;
   text-shadow: 4px 2px 0 #698F8F;
 }
-body .landing-page .hero-wrapper .hero-content .hero-row .hero-image-container {
+.hero-wrapper .hero-content .hero-row .hero-image-container {
   text-align: right;
 }
-body .landing-page .hero-wrapper .hero-content .hero-row .hero-image-container .hero-image {
+.hero-wrapper .hero-content .hero-row .hero-image-container .hero-image {
   width: 300px;
   height: auto;
   position: relative;
   z-index: 6;
 }
-body .landing-page .main-content .heading {
+
+.main-content .heading {
   font-family: "Roboto Slab", serif;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
-body .landing-page .main-content .about-me {
+.main-content .about-me {
   padding: 4rem 0;
 }
-body .landing-page .main-content .about-me .row .philosophie-text .text-box {
+.main-content .about-me .row .philosophie-text .text-box {
   background-color: #698F8F;
   color: #fff;
   padding: 2rem;
 }
-body .landing-page .main-content .about-me .row .philosophie-text .text-box .supertitle {
+.main-content .about-me .row .philosophie-text .text-box .supertitle {
   font-family: "Fira Code", monospace;
   font-weight: 600;
   font-size: 1rem;
@@ -18762,37 +18787,37 @@ body .landing-page .main-content .about-me .row .philosophie-text .text-box .sup
   color: #D1C8C2;
   margin-bottom: 0.5rem;
 }
-body .landing-page .main-content .about-me .row .philosophie-text .text-box .philosophie-heading {
+.main-content .about-me .row .philosophie-text .text-box .philosophie-heading {
   font-family: "Roboto Slab", serif;
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 1rem;
 }
-body .landing-page .main-content .about-me .row .philosophie-text .text-box .philosophie-heading .accent {
+.main-content .about-me .row .philosophie-text .text-box .philosophie-heading .accent {
   color: #D4AC64;
 }
-body .landing-page .main-content .about-me .row .philosophie-text .text-box .philosophie-list .row {
+.main-content .about-me .row .philosophie-text .text-box .philosophie-list .row {
   margin: 15px 0 0;
 }
-body .landing-page .main-content .about-me .row .philosophie-text .text-box .philosophie-list .row .col-1 {
+.main-content .about-me .row .philosophie-text .text-box .philosophie-list .row .col-1 {
   padding: 0;
 }
-body .landing-page .main-content .about-me .row .philosophie-text .text-box .philosophie-list .row .col-1 .list-icon {
+.main-content .about-me .row .philosophie-text .text-box .philosophie-list .row .col-1 .list-icon {
   color: #D4AC64;
   font-size: 25px;
 }
-body .landing-page .main-content .personal-information {
+.main-content .personal-information {
   background-color: #D1C8C2;
 }
-body .landing-page .main-content .personal-information .container {
+.main-content .personal-information .container {
   padding: 4rem 0;
 }
-body .landing-page .main-content .personal-information .container .step {
+.main-content .personal-information .container .step {
   display: flex;
   margin: 30px 0;
   overflow: hidden;
 }
-body .landing-page .main-content .personal-information .container .step .step-indicator {
+.main-content .personal-information .container .step .step-indicator {
   position: relative;
   box-sizing: border-box;
   flex: 0 0 40px;
@@ -18808,7 +18833,7 @@ body .landing-page .main-content .personal-information .container .step .step-in
   font-size: 1.5em;
   z-index: 10;
 }
-body .landing-page .main-content .personal-information .container .step .step-indicator::before {
+.main-content .personal-information .container .step .step-indicator::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -18819,68 +18844,184 @@ body .landing-page .main-content .personal-information .container .step .step-in
   transform: translateX(-50%);
   z-index: 1;
 }
-body .landing-page .main-content .personal-information .container .step .step-content {
+.main-content .personal-information .container .step .step-content {
   padding-left: 20px;
 }
-body .landing-page .main-content .personal-information .container .step .step-content .step-heading {
+.main-content .personal-information .container .step .step-content .step-heading {
   font-family: "Fira Code", monospace;
   font-weight: 600;
   margin-bottom: 20px;
   color: #2A363B;
   margin-top: 0;
 }
-body .landing-page .main-content .personal-information .container .step .step-content p {
+.main-content .personal-information .container .step .step-content p {
   color: rgb(73.8118811881, 94.900990099, 103.6881188119);
   line-height: 1.6;
   width: 80%;
 }
-body .landing-page .main-content .work-samples {
+.main-content .work-samples {
   background-image: url(../../images/Triangle_pattern.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
-body .landing-page .main-content .work-samples .container {
+.main-content .work-samples .container {
   padding: 4rem 0;
 }
-body .landing-page .main-content .work-samples .container .row {
+.main-content .work-samples .container .row {
   margin: 15px 0;
 }
-body .landing-page .main-content .work-samples .container .row .card {
+.main-content .work-samples .container .row .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-body .landing-page .main-content .work-samples .container .row .card:hover {
+.main-content .work-samples .container .row .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-body .landing-page .main-content .work-samples .container .row .card:hover .arrow-icon {
+.main-content .work-samples .container .row .card:hover .arrow-icon {
   color: #D4AC64;
 }
-body .landing-page .main-content .work-samples .container .row .custom-card-shadow {
+.main-content .work-samples .container .row .custom-card-shadow {
   border: 1px solid #dedede;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
-body .landing-page .main-content .work-samples .container .row .custom-card-shadow i {
+.main-content .work-samples .container .row .custom-card-shadow i {
   font-size: 30px;
 }
-body .landing-page .main-content .work-samples .container .row .custom-card-shadow .arrow-icon {
+.main-content .work-samples .container .row .custom-card-shadow .arrow-icon {
   font-size: 24px;
 }
-body .landing-page .main-content .work-samples .container .row .custom-card-shadow .card-text {
+.main-content .work-samples .container .row .custom-card-shadow .card-text {
   color: rgb(73.8118811881, 94.900990099, 103.6881188119);
   font-size: 0.9em;
 }
-body .landing-page .main-content .footer {
-  background-color: #2A363B;
+
+/* --- Figma Page --- */
+.hero-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+}
+.hero-wrapper .hero-bg-left-page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60vw;
+  height: 100%;
+  background-image: url("../../images/Triangle_pattern.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  position: absolute;
+}
+.hero-wrapper .hero-bg-right-page {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60vw;
+  height: 100%;
+  background: #2A363B;
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+.hero-wrapper .hero-content {
+  position: relative;
+  z-index: 5;
+  padding: 3rem 0;
+}
+.hero-wrapper .hero-content .heading {
+  text-transform: uppercase;
+  text-align: center;
   color: #fff;
-  padding: 20px 0;
-  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-size: 300px;
+  font-weight: 900;
+  text-shadow: 3px 3px 0 #698F8F;
+  text-shadow: 0 0 5px #698F8F, 1px 1px 0 #698F8F, 2px 2px 0 #698F8F, 3px 3px 0 #698F8F, 4px 4px 0 #698F8F, 5px 5px 0 #698F8F, 6px 6px 0 #698F8F, 7px 7px 0 #698F8F, 8px 8px 0 #698F8F, 9px 9px 0 #698F8F, 10px 10px 0 #698F8F, 11px 11px 0 #698F8F, 12px 12px 0 #698F8F, 13px 13px 0 #698F8F, 14px 14px 0 #698F8F, 15px 15px 0 #698F8F, 16px 16px 0 #698F8F, 17px 17px 0 #698F8F, 18px 18px 0 #698F8F, 19px 19px 0 #698F8F, 20px 20px 0 #698F8F, 21px 21px 0 #698F8F, 22px 22px 0 #698F8F, 23px 23px 0 #698F8F, 24px 24px 0 #698F8F, 25px 25px 0 #698F8F;
 }
-body .landing-page .main-content .footer .footer-links {
-  text-align: right;
+
+.main-content .learnings {
+  padding: 4rem 0;
 }
-body .landing-page .main-content .footer .footer-links a {
-  color: inherit;
-  margin-right: 10px;
+.main-content .learnings .learnings-content {
+  border: 1px solid #dedede;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+  padding: 40px;
+}
+.main-content .learnings .learnings-content .row {
+  margin: 0;
+}
+.main-content .learnings .learnings-content .row .col-md-6 i {
+  font-size: 3rem;
+  color: #D4AC64;
+}
+.main-content .learnings .learnings-content .row .col-md-6 .learnings-heading {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+.main-content .learnings .learnings-content .row .col-md-6 .cursive {
+  font-weight: 900;
+  font-style: italic;
+}
+.main-content .my-work-container {
+  background-image: url(../../images/Triangle_pattern.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main-content .my-work-container .my-work {
+  padding: 4rem 0;
+  /* Hover-Effekt für Projektkarten */
+}
+.main-content .my-work-container .my-work .project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.main-content .my-work-container .my-work .project-card:hover {
+  transform: translateY(-5px);
+  /* !important kann hier verwendet werden, um Bootstrap-Utilities zu überschreiben,
+  wird aber in SCSS-Custom-Styles meist vermieden. */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.main-content .my-work-container .my-work .project-card .project-image-container {
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  /* Behält das 4:3 Seitenverhältnis bei */
+}
+.main-content .my-work-container .my-work .project-card .project-image {
+  transition: transform 0.5s ease;
+  /* Wenn die Elternkarte gehovert wird, skaliere das Bild */
+}
+.project-card:hover .main-content .my-work-container .my-work .project-card .project-image {
+  transform: scale(1.05);
+}
+.main-content .my-work-container .my-work {
+  /* Modal-Anpassungen für das "Dark Lightbox" Gefühl */
+}
+.main-content .my-work-container .my-work .modal-fullscreen-dark {
+  /* Nutzt Bootstrap Custom Properties (CSS Variables) */
+  --bs-modal-bg: rgba(0, 0, 0, 0.95);
+  /* Dunkler, halbtransparenter Hintergrund */
+  backdrop-filter: blur(8px);
+}
+.main-content .my-work-container .my-work .modal-content-inner {
+  background-color: #1f2937;
+  /* Dunkelgrau für den Inhaltsbereich */
+  color: #e5e7eb;
+  max-width: 1200px;
+  width: 90vw;
+  max-height: 90vh;
+}
+.main-content .my-work-container .my-work .btn-close-white {
+  color: #e5e7eb;
+  opacity: 0.8;
+  transition: transform 0.2s;
+}
+.main-content .my-work-container .my-work .btn-close-white:hover {
+  opacity: 1;
+  transform: rotate(90deg);
 }
 
 /*# sourceMappingURL=styles.css.map */

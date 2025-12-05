@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Portfolio</title>
+    <link rel="stylesheet" href="styles/css/styles.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="row nav-row">
+            <div class="col-6 logo-container">
+                <img class="logo" src="images/logo.svg" alt="Logo" />
+            </div>
+            <div class="col-6 nav-links">
+                <a href="index.html">Home</a>
+                <a href="#zeugnis">Arbeitszeugnis</a>
+                <div class="dropdown">
+                    <a href="#projects">Projekte</a>
+                    <div class="dropdown-menu">
+                        <a href="figma.html">Figma</a>
+                        <a href="webdesign.html">Webdesign</a>
+                        <a href="wordpress.html">Wordpress</a>
+                        <a href="graphics.html">Grafik</a>
+                        <a href="madcap.html">Madcap Flare</a>
+                        <a href="project-website.html">Projekt Website</a>
+                    </div>
+                </div>
+                <a href="#contact">Kontakt</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-wrapper">
+        <div class="hero-bg-left-page"></div>
+        <div class="hero-bg-right-page"></div>
+
+        <div class="container hero-content">
+            <div class="heading">
+                Figma
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="container learnings">
+            <div class="heading">
+                Design-Strategie und Erfolgsfaktor Team
+            </div>
+            <div class="learnings-content">
+                <div class="row">
+                    <div class="col-md-6 team">
+                        <i class="icon-users"></i>
+                        <p></p>
+                        <div class="learnings-heading">
+                            Zusammenarbeit & Lösungsorientiertes Feedback
+                        </div>
+                        <div class="learnings-text">
+                            Design ist Teamarbeit. Ich habe gelernt, den Austausch und das gemeinsame Brainstorming
+                            aktiv zu nutzen, um die bestmöglichen Lösungen zu finden. Mein Fokus liegt auf der schnellen
+                            und lösungsorientierten Umsetzung von Kritik, um Design-Iterationen zügig voranzutreiben.
+                            <p></p>
+                            <span class="cursive">Ich sehe Feedback als notwendigen Motor für besseres Design.</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 workway">
+                        <i class="icon-palette"></i>
+                        <p></p>
+                        <div class="learnings-heading">
+                            Corporate Design (CD) Konsequent Anwenden
+                        </div>
+                        <div class="learnings-text">
+                            Beim Erstellen von Mockups für Webdesigns stelle ich sicher, dass das Corporate Design (CD)
+                            von Anfang an konsequent angewendet wird. Durch die Nutzung von Komponenten und der
+                            Zusammenstellung von Grafiken sorge ich für ein stimmiges Gesamtbild, das die Marke klar
+                            repräsentiert.
+                            <ul>
+                                <li>Fokus auf CD-Vorgaben bei Farben und Typografie.</li>
+                                <li>Grafiken und Komponenten für Konsistenz zusammenstellen.</li>
+                                <li>Mockups erstellen und für die Umsetzung vorbereiten.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-work-container">
+            <div class="container my-work">
+                <div class="heading">
+                    KONKRETE PROJEKTE (VISUELLE BELEGE MEINER ARBEIT)
+                </div>
+                <!-- PROJEKT GRID LAYOUT -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+
+                    <!-- PROJEKT 1 KARTE (TRIGGER) -->
+                    <div class="col d-flex">
+                        <!-- WICHTIGE ÄNDERUNG: data-bs-toggle und data-bs-target hinzugefügt -->
+                        <div class="card project-card border-0 shadow-lg h-100 w-100 bg-white" data-bs-toggle="modal"
+                            data-bs-target="#modal-projekt1">
+                            <div class="project-image-container">
+                                <img src="images/Messestand.png"/
+                                    alt="Vorschaubild Messestand"
+                                    class="project-image w-100 h-100 object-fit-cover">
+                            </div>
+                            <div class="card-body text-dark">
+                                <h3 class="card-title h5 fw-bold mb-2">Messestand Display Konzeption</h3>
+                                <p class="card-text small text-muted mb-1">Entwicklung strategischer Display-Entwürfe und Informationsarchitektur..</p>
+                                <p class="card-text smaller text-secondary">Fokus auf Markenbotschaft und Cross-Team-Zusammenarbeit.</p>
+                                <span class="mt-3 d-inline-block text-primary fw-semibold small text-uppercase">
+                                    Details ansehen &rarr;
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJEKT 2 KARTE (TRIGGER) -->
+                    <div class="col d-flex">
+                        <!-- WICHTIGE ÄNDERUNG: data-bs-toggle und data-bs-target hinzugefügt -->
+                        <div class="card project-card border-0 shadow-lg h-100 w-100 bg-white" data-bs-toggle="modal"
+                            data-bs-target="#modal-projekt2">
+                            <div class="project-image-container">
+                                <img src="https://placehold.co/800x600/047857/FFFFFF?text=Dashboard+Vorschau"
+                                    alt="Vorschaubild Dashboard Entwicklung"
+                                    class="project-image w-100 h-100 object-fit-cover">
+                            </div>
+                            <div class="card-body text-dark">
+                                <h3 class="card-title h5 fw-bold mb-2">Performance Dashboard</h3>
+                                <p class="card-text small text-muted mb-1">Entwicklung eines interaktiven Dashboards zur
+                                    Echtzeit-Analyse.</p>
+                                <p class="card-text smaller text-secondary">Technologien: React, Chart.js und
+                                    REST-API-Integration.</p>
+                                <span class="mt-3 d-inline-block text-primary fw-semibold small text-uppercase">
+                                    Details ansehen &rarr;
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJEKT 3 KARTE (TRIGGER) -->
+                    <div class="col d-flex">
+                        <!-- WICHTIGE ÄNDERUNG: data-bs-toggle und data-bs-target hinzugefügt -->
+                        <div class="card project-card border-0 shadow-lg h-100 w-100 bg-white" data-bs-toggle="modal"
+                            data-bs-target="#modal-projekt3">
+                            <div class="project-image-container">
+                                <img src="https://placehold.co/800x600/C2410C/FFFFFF?text=Firmenwebsite+Vorschau"
+                                    alt="Vorschaubild Corporate Website"
+                                    class="project-image w-100 h-100 object-fit-cover">
+                            </div>
+                            <div class="card-body text-dark">
+                                <h3 class="card-title h5 fw-bold mb-2">Corporate Website Relaunch</h3>
+                                <p class="card-text small text-muted mb-1">Kompletter Relaunch inklusive
+                                    CMS-Implementierung (WordPress).</p>
+                                <p class="card-text smaller text-secondary">Priorisierung von SEO, Pagespeed und
+                                    Barrierefreiheit.</p>
+                                <span class="mt-3 d-inline-block text-primary fw-semibold small text-uppercase">
+                                    Details ansehen &rarr;
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- --------------------------------------- -->
+        <!-- BOOTSTRAP MODALS (Case Study View) -->
+        <!-- --------------------------------------- -->
+
+        <!-- MODAL 1: E-COMMERCE (ZIEL) -->
+        <div class="modal fade modal-fullscreen-dark" id="modal-projekt1" tabindex="-1"
+            aria-labelledby="modal-projekt1-label" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content modal-content-inner p-0 rounded-3 shadow-lg">
+                    <div class="modal-header border-0 pb-0">
+                        <!-- Close Button (DISMISS) -->
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Schließen"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div class="row g-0">
+                            <!-- Bild-Panel (Links) -->
+                            <div class="col-md-7 bg-dark d-flex align-items-center justify-content-center p-0">
+                                <img src="https://placehold.co/1600x1200/1E40AF/FFFFFF?text=GROSSE+ANSICHT+PROJEKT+1"
+                                    alt="Großansicht E-Commerce Redesign" class="w-100 h-100 object-fit-contain p-4">
+                            </div>
+
+                            <!-- Text-Panel (Rechts) -->
+                            <div class="col-md-5 p-5">
+                                <h3 class="display-6 fw-bolder text-white mb-2" id="modal-projekt1-label">1. E-Commerce
+                                    Redesign</h3>
+                                <p class="lead text-info fw-medium">Case Study: Mobile First Optimization</p>
+
+                                <hr class="my-4 border-secondary">
+
+                                <div class="space-y-4">
+                                    <h4 class="h5 fw-bold text-white">Die Herausforderung</h4>
+                                    <p class="text-secondary">Die größte Herausforderung lag in der **hohen
+                                        Abbruchrate** auf mobilen Geräten. Der Checkout-Prozess war zu lang und
+                                        erforderte unnötige Schritte. Das Ziel war eine **60%ige Reduzierung der
+                                        Klicks** bis zum Kaufabschluss.</p>
+
+                                    <h4 class="h5 fw-bold text-white pt-2">Meine Rolle & Vorgehen</h4>
+                                    <ul class="list-unstyled text-secondary">
+                                        <li><i class="bi bi-dot me-1"></i>**Lead UI/UX:** Verantwortlich für das gesamte
+                                            mobile Experience-Design.</li>
+                                        <li><i class="bi bi-dot me-1"></i>**Prototyping:** Erstellung interaktiver
+                                            Prototypen in Figma.</li>
+                                        <li><i class="bi bi-dot me-1"></i>**A/B-Tests:** Konzeption und Auswertung der
+                                            Tests auf Basis von Hotjar-Daten.</li>
+                                    </ul>
+
+                                    <h4 class="h5 fw-bold text-white pt-2">Ergebnis & Kennzahlen</h4>
+                                    <p class="text-success fw-semibold">✅ 22% Steigerung der mobilen Conversion Rate in
+                                        Q2.</p>
+                                    <p class="text-secondary">Durch die Implementierung einer One-Page-Checkout-Lösung
+                                        und der Optimierung der Formularfelder konnte der Prozess signifikant vereinfert
+                                        werden.</p>
+
+                                    <h4 class="h5 fw-bold text-white pt-2">Technologie-Stack</h4>
+                                    <span class="badge text-bg-primary fw-semibold me-2">Figma</span>
+                                    <span class="badge text-bg-primary fw-semibold me-2">User Testing</span>
+                                    <span class="badge text-bg-primary fw-semibold">Hotjar</span>
+                                </div>
+
+                                <button type="button" class="btn btn-sm btn-link text-secondary mt-5 w-100"
+                                    data-bs-dismiss="modal">
+                                    Zurück zur Portfolio-Übersicht
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- MODAL 2: DASHBOARD ENTWICKLUNG (ZIEL) -->
+        <div class="modal fade modal-fullscreen-dark" id="modal-projekt2" tabindex="-1"
+            aria-labelledby="modal-projekt2-label" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content modal-content-inner p-0 rounded-3 shadow-lg">
+                    <div class="modal-header border-0 pb-0">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Schließen"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div class="row g-0">
+                            <div class="col-md-7 bg-dark d-flex align-items-center justify-content-center p-0">
+                                <img src="https://placehold.co/1600x1200/047857/FFFFFF?text=GROSSE+ANSICHT+PROJEKT+2"
+                                    alt="Großansicht Dashboard Entwicklung" class="w-100 h-100 object-fit-contain p-4">
+                            </div>
+
+                            <!-- Text-Panel (Rechts) -->
+                            <div class="col-md-5 p-5">
+                                <h3 class="display-6 fw-bolder text-white mb-2" id="modal-projekt2-label">2.
+                                    Interaktives Performance Dashboard</h3>
+                                <p class="lead text-info fw-medium">Case Study: Echtzeit-Datenvisualisierung</p>
+
+                                <hr class="my-4 border-secondary">
+
+                                <div class="space-y-4">
+                                    <h4 class="h5 fw-bold text-white">Die Herausforderung</h4>
+                                    <p class="text-secondary">Interne Teams benötigten eine performante und
+                                        konsolidierte Ansicht aller Key Performance Indicators (KPIs), die zuvor über
+                                        mehrere Tools verstreut waren. Hauptziel: **Beschleunigung der
+                                        Entscheidungsfindung**.</p>
+
+                                    <h4 class="h5 fw-bold text-white pt-2">Meine Rolle & Vorgehen</h4>
+                                    <ul class="list-unstyled text-secondary">
+                                        <li><i class="bi bi-dot me-1"></i>**Frontend Developer:** Verantwortlich für die
+                                            gesamte Implementierung der Benutzeroberfläche und Datenanbindung.</li>
+                                        <li><i class="bi bi-dot me-1"></i>**Architektur:** Aufbau der
+                                            React-Komponentenstruktur zur Wiederverwendbarkeit.</li>
+                                        <li><i class="bi bi-dot me-1"></i>**Visualisierung:** Nutzung von Chart.js für
+                                            dynamische und responsive Diagramme.</li>
+                                    </ul>
+
+                                    <h4 class="h5 fw-bold text-white pt-2">Ergebnis & Kennzahlen</h4>
+                                    <p class="text-success fw-semibold">✅ Tägliche Berichtszeit um 40% reduziert.</p>
+                                    <p class="text-secondary">Das Dashboard liefert nun Echtzeitdaten, wodurch proaktive
+                                        Anpassungen in Marketing- und Vertriebsstrategien sofort möglich wurden.</p>
+
+                                    <h4 class="h5 fw-bold text-white pt-2">Technologie-Stack</h4>
+                                    <span class="badge text-bg-primary fw-semibold me-2">React</span>
+                                    <span class="badge text-bg-primary fw-semibold me-2">Tailwind CSS</span>
+                                    <span class="badge text-bg-primary fw-semibold">Chart.js</span>
+                                </div>
+
+                                <button type="button" class="btn btn-sm btn-link text-secondary mt-5 w-100"
+                                    data-bs-dismiss="modal">
+                                    Zurück zur Portfolio-Übersicht
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- MODAL 3: FIRMEN-WEBSITE (ZIEL) -->
+        <div class="modal fade modal-fullscreen-dark" id="modal-projekt3" tabindex="-1"
+            aria-labelledby="modal-projekt3-label" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content modal-content-inner p-0 rounded-3 shadow-lg">
+                    <div class="modal-header border-0 pb-0">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Schließen"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div class="row g-0">
+                            <div class="col-md-7 bg-dark d-flex align-items-center justify-content-center p-0">
+                                <img src="https://placehold.co/1600x1200/C2410C/FFFFFF?text=GROSSE+ANSICHT+PROJEKT+3"
+                                    alt="Großansicht Corporate Website" class="w-100 h-100 object-fit-contain p-4">
+                            </div>
+
+                            <!-- Text-Panel (Rechts) -->
+                            <div class="col-md-5 p-5">
+                                <h3 class="display-6 fw-bolder text-white mb-2" id="modal-projekt3-label">3. Corporate
+                                    Website Relaunch</h3>
+                                <p class="lead text-info fw-medium">Case Study: CMS-Implementierung & SEO-Fokus</p>
+
+                                <hr class="my-4 border-secondary">
+
+                                <div class="space-y-4">
+                                    <h4 class="h5 fw-bold text-white">Die Herausforderung</h4>
+                                    <p class="text-secondary">Die alte Firmenwebsite war schwerfällig und das
+                                        Content-Management war ineffizient. Das Ziel war ein **moderner,
+                                        suchmaschinenfreundlicher Auftritt** mit Fokus auf schnellen Ladezeiten.</p>
+
+                                    <h4 class="h5 fw-bold text-white pt-2">Meine Rolle & Vorgehen</h4>
+                                    <ul class="list-unstyled text-secondary">
+                                        <li><i class="bi bi-dot me-1"></i>**Full-Stack-Entwickler:** Verantwortlich für
+                                            Backend-Logik und Frontend-Umsetzung.</li>
+                                        <li><i class="bi bi-dot me-1"></i>**CMS-Entwicklung:** Erstellung eines
+                                            maßgeschneiderten WordPress-Themes.</li>
+                                        <li><i class="bi bi-dot me-1"></i>**Performance-Optimierung:** Implementierung
+                                            von Lazy Loading und kritischem CSS.</li>
+
+                                    </ul>
+
+                                    <h4 class="h5 fw-bold text-white pt-2">Ergebnis & Kennzahlen</h4>
+                                    <p class="text-success fw-semibold">✅ Google Pagespeed Score von 95+ auf
+                                        Mobilgeräten erreicht.</p>
+                                    <p class="text-secondary">Innerhalb von drei Monaten stieg der organische Traffic
+                                        dank der optimierten Struktur und der sauberen Codebasis um 35%.</p>
+
+                                    <h4 class="h5 fw-bold text-white pt-2">Technologie-Stack</h4>
+                                    <span class="badge text-bg-primary fw-semibold me-2">PHP</span>
+                                    <span class="badge text-bg-primary fw-semibold me-2">WordPress</span>
+                                    <span class="badge text-bg-primary fw-semibold">SCSS</span>
+                                </div>
+
+                                <button type="button" class="btn btn-sm btn-link text-secondary mt-5 w-100"
+                                    data-bs-dismiss="modal">
+                                    Zurück zur Portfolio-Übersicht
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-md-6 footer-text">
+                    &copy; 2025 Sandra Henkensiefken. Alle Rechte vorbehalten.
+                </div>
+                <div class="col-md-6 footer-links">
+                    <a href="#impressum">Impressum</a>
+                    <a href="#datenschutz">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

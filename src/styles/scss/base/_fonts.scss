@@ -1,0 +1,37 @@
+@use "../abstracts/mixins" as m;
+@use "../../../fonts/lucide-static/font/lucide.scss";
+
+/* FIRA CODE */
+@include m.define-font('Fira Code', 'Fira_Code/static', 'FiraCode-Regular.ttf', 400);
+@include m.define-font('Fira Code', 'Fira_Code/static', 'FiraCode-Medium.ttf', 500);
+@include m.define-font('Fira Code', 'Fira_Code/static', 'FiraCode-SemiBold.ttf', 600);
+@include m.define-font('Fira Code', 'Fira_Code/static', 'FiraCode-Bold.ttf', 700);
+
+
+/* ROBOTO */
+@include m.define-font('Roboto', 'Roboto/static', 'Roboto-Light.ttf', 300);
+@include m.define-font('Roboto', 'Roboto/static', 'Roboto-Regular.ttf', 400);
+@include m.define-font('Roboto', 'Roboto/static', 'Roboto-Medium.ttf', 500);
+@include m.define-font('Roboto', 'Roboto/static', 'Roboto-Bold.ttf', 700);
+
+
+/* ROBOTO SLAB */
+@include m.define-font('Roboto Slab', 'Roboto_Slab/static', 'RobotoSlab-Light.ttf', 300);
+@include m.define-font('Roboto Slab', 'Roboto_Slab/static', 'RobotoSlab-Regular.ttf', 400);
+@include m.define-font('Roboto Slab', 'Roboto_Slab/static', 'RobotoSlab-Medium.ttf', 500);
+@include m.define-font('Roboto Slab', 'Roboto_Slab/static', 'RobotoSlab-Bold.ttf', 700);
+
+
+/* LUCIDE ICONS */
+@font-face {
+  font-family: "lucide";
+  src: url('../../fonts/lucide-static/font/lucide.eot');
+  /* IE9*/
+  src: url('../../fonts/lucide-static/font/lucide.eot') format('embedded-opentype')
+    /* IE6-IE8 */
+    ,
+    url('../../fonts/lucide-static/font/lucide.woff2') format('woff2'),
+    url('../../fonts/lucide-static/font/lucide.woff') format('woff'),
+    url('../../fonts/lucide-static/font/lucide.ttf') format('truetype'),
+    url('../../fonts/lucide-static/font/lucide.svg') format('svg');
+}

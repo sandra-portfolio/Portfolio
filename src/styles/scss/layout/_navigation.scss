@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.navigation {
+  background-color: var.$color-primary;
+  padding: 1.5rem 4rem;
+
+  .nav-row {
+    height: 100%;
+    @include mix.limit-content-width;
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      .logo {
+        height: 25px;
+      }
+
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: flex-end;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: color 0.3s ease;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 4px;
+
+        &:hover {
+          color: var.$color-accent;
+          // Optionale Unterstreichung bei Hover
+          border-bottom: 2px solid var.$color-accent;
+        }
+      }
+
+      .dropdown {
+        position: relative;
+        /* Anchor für das absolute Menü */
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        /* Der Dropdown-Toggle-Link erbt alle 'a'-Styles, das ist korrekt */
+
+        /* Das versteckte Untermenü */
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          /* Platziert das Menü direkt unter dem Link */
+          left: 50%;
+          transform: translateX(-50%);
+          /* Zentriert das Menü unter dem Link */
+          z-index: 1000;
+
+          /* Styling des Menü-Containers */
+          background-color: lighten(var.$color-primary, 5%);
+          min-width: 180px;
+          padding: 5px 0;
+          border-radius: 4px;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+
+          /* Verbergen durch Opacity und Visibility */
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+
+          /* Vertikale Anordnung der Unterpunkte */
+          display: flex;
+          flex-direction: column;
+
+          /* Links im Untermenü */
+          a {
+            padding: 10px 15px;
+            text-align: left;
+            width: 100%;
+            font-size: 0.95rem;
+            text-transform: none;
+            /* Keine Großbuchstaben */
+            font-weight: 400;
+
+            /* Unterpunkte haben keinen Bottom-Border */
+            border-bottom: none;
+
+            &:hover {
+              color: var.$color-accent;
+              background-color: lighten(var.$color-primary, 15%);
+            }
+          }
+        }
+
+        /* Dropdown beim Hovern anzeigen */
+        &:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as var;
+
+.footer {
+    background-color: var.$color-primary;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+
+    .footer-links {
+      text-align: right;
+
+      a {
+        color: inherit;
+        margin-right: 10px;
+        ;
+      }
+    }
+  }

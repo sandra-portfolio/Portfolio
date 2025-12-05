@@ -1,0 +1,105 @@
+// scss/base/_reset.scss
+
+// 1. Box-Sizing auf border-box setzen (Modernes Layout-Modell)
+// *****************************************************************
+// Stellt sicher, dass padding und border zur Gesamtbreite eines Elements gehören.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// 2. Entfernen von Standard-Margin und -Padding
+// *****************************************************************
+// Entfernt standardmäßig gesetzte Abstände, damit Sie bei Null starten.
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+ul,
+ol,
+li,
+table,
+tr,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+// 3. Setzen von body-Styles (Basis für die gesamte Seite)
+// *****************************************************************
+body {
+  // Grundlegende Styles von der Haupt-Typografie-Datei erben
+  line-height: 1.5; 
+  // Das Scrollverhalten festlegen, damit sanfte Übergänge möglich sind
+  -webkit-font-smoothing: antialiased; 
+}
+
+// 4. Reset für Medien (Bilder, Videos)
+// *****************************************************************
+// Bilder sollen sich an den Container anpassen und nicht überlaufen.
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// 5. Entfernen der Standard-Listenpunkte
+// *****************************************************************
+ul,
+ol {
+  list-style: none;
+}
+
+// 6. Entfernen von Standard-Styling bei Links und Buttons
+// *****************************************************************
+a {
+  text-decoration: none;
+  color: inherit; // Links erben die Textfarbe des Eltern-Elements
+}
+
+// 7. Elemente, die den Textfluss stören
+// *****************************************************************
+// Erbt Font- und Color-Einstellungen von den Eltern
+input,
+button,
+textarea,
+select {
+  font: inherit; 
+}
+
+// 8. Spezifische Resets
+// *****************************************************************
+// Entfernt Standard-Margin von 'main' (HTML5 Content Area)
+main {
+  display: block;
+}
+
+// Setzt die Vererbung für Textdarstellungs-Elemente zurück
+code, kbd, samp, pre {
+  font-family: monospace, monospace;
+}
+
+// Sorgt für sauberes Stacking (Verschachtelung) von Tabellenzellen
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
