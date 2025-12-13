@@ -4,7 +4,7 @@
 /* --- Landing Page --- */
 
 
-.hero-wrapper {
+.hero-wrapper-landing {
   position: relative;
   overflow: hidden;
   min-height: 360px;
@@ -19,6 +19,10 @@
     background: var.$color-primary;
     clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
     z-index: 1;
+
+    @media (max-width: 768px) {
+      width: 100vw;
+    }
   }
 
   // Rechte Seite (Hintergrundgrafik)
@@ -32,6 +36,10 @@
     background-size: cover;
     background-position: center;
     z-index: 0;
+
+    @media (max-width: 768px) {
+      width: 100vw;
+    }
   }
 
   // Der begrenzte Inhalt (Bootstrap-Container)
@@ -43,8 +51,10 @@
     .hero-row {
       display: flex;
 
+
       .hero-text {
         color: #fff;
+        position: relative;
 
         .supertitle {
           font-family: "Fira Code", monospace;
@@ -64,6 +74,36 @@
           margin-bottom: 0;
           // Schatten in der Akzentfarbe
           text-shadow: 4px 2px 0 var.$color-secondary;
+        }
+
+        .trapez-1 {
+          width: 100px;
+          height: 50px;
+          transform: skew(-20deg);
+          background: var.$color-accent;
+          position: absolute;
+          top: -10px;
+          right: -5px;
+          z-index: 1;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+
+        .trapez-2 {
+          width: 140px;
+          height: 70px;
+          transform: skew(-20deg);
+          background: var.$color-secondary;
+          position: absolute;
+          top: 10px;
+          right: -60px;
+          z-index: 0;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
       }
 
@@ -94,7 +134,12 @@
     padding: 4rem 0;
 
     .row {
+      margin: 0;
+
       .philosophie-text {
+        @media (max-width: 768px) {
+          padding:0;
+        }
         .text-box {
           background-color: var.$color-secondary;
           color: #fff;
@@ -139,12 +184,22 @@
           }
         }
       }
+
+      .about-me-text {
+        @media (max-width: 768px) {
+          margin-top: 30px;
+        }
+      }
     }
 
   }
 
   .personal-information {
     background-color: var.$color-tertiary;
+
+    @media (max-width: 768px) {
+      padding: 20px;
+    }
 
     .container {
       padding: 4rem 0;
@@ -229,37 +284,47 @@
 
       .row {
         margin: 15px 0;
+        @media (max-width: 768px) {
+          margin:0;
+        }
 
-        .card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .card-content {
+          @media (max-width: 768px) {
+            margin-bottom: 15px;
+          }
+          .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-          &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            &:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            &:hover .arrow-icon {
+              color: var.$color-accent; // Farbe des Pfeils ändert sich zum Akzent
+            }
           }
 
-          &:hover .arrow-icon {
-            color: var.$color-accent; // Farbe des Pfeils ändert sich zum Akzent
+          .custom-card-shadow {
+            border: 1px solid #dedede;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+
+            i {
+              font-size: 30px
+            }
+
+            .arrow-icon {
+              font-size: 24px;
+            }
+
+            .card-text {
+              color: lighten(var.$color-primary, 15%);
+              font-size: 0.9em;
+            }
           }
         }
 
-        .custom-card-shadow {
-          border: 1px solid #dedede;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 
-          i {
-            font-size: 30px
-          }
-
-          .arrow-icon {
-            font-size: 24px;
-          }
-
-          .card-text {
-            color: lighten(var.$color-primary, 15%);
-            font-size: 0.9em;
-          }
-        }
       }
     }
   }

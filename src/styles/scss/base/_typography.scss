@@ -9,3 +9,11 @@ body {
     padding: 0;
     margin: 0;
 }
+
+body, 
+p, 
+h1, h2, h3, h4, h5, h6, 
+li {
+  hyphens: auto;
+  overflow-wrap: break-word; /* Wichtig als Rückfall-Mechanismus */
+}

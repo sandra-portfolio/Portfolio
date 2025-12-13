@@ -1,12 +1,10 @@
 @use "../abstracts/variables" as var;
 @use "../abstracts/mixins" as mix;
 
-/* --- Figma Page --- */
 
 .hero-wrapper {
     position: relative;
     overflow: hidden;
-    min-height: 360px;
 
     // Linke Seite (dunkel + Schrägschnitt)
     .hero-bg-left-page {
@@ -44,11 +42,13 @@
             text-align: center;
             color: #fff;
             font-family: "Roboto", sans-serif;
-            font-size: 300px;
             font-weight: 900;
             text-shadow: 3px 3px 0 var.$color-secondary;
             @include mix.create-3d-shadow(var.$color-secondary, var.$depth);
-
+            white-space: nowrap;
+            display: block;
+            max-width: 95vw;
+            font-size: clamp(3rem, 10vw, 15.625vw),
         }
     }
 }
@@ -62,6 +62,10 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
             background-color: #fff;
             padding: 40px;
+
+            @media (max-width: 768px) {
+                padding: 20px;
+            }
 
             .row {
                 margin: 0;
@@ -99,6 +103,9 @@
 
         .my-work {
             padding: 4rem 0;
+            .row{
+                margin: 0;
+            }
 
             /* Hover-Effekt für Projektkarten */
             .project-card {

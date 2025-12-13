@@ -1,0 +1,64 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.learnings-content {
+    .topic-explain {
+        border-bottom: 1px solid #ededed;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        ;
+
+        .explain-heading {
+            font-family: "Roboto Slab", serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .icon-book-open {
+            color: var.$color-accent;
+        }
+    }
+}
+
+.praxis-card {
+    border: 1px solid #dedede;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 20px;;
+    .praxis-text-container {
+        .praxis-supertitle {
+            font-family: "Roboto Slab", serif;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var.$color-accent;
+            margin-bottom: 10px;
+        }
+
+        .praxis-heading {
+            font-family: "Roboto Slab", serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .praxis-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .praxis-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

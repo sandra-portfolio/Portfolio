@@ -14,40 +14,48 @@
             <div class="col-6 logo-container">
                 <img class="logo" src="images/logo.svg" alt="Logo" />
             </div>
+
             <div class="col-6 nav-links">
-                <a href="index.html">Home</a>
-                <a href="#zeugnis">Arbeitszeugnis</a>
-                <div class="dropdown">
-                    <a href="#projects">Projekte</a>
-                    <div class="dropdown-menu">
-                        <a href="figma.html">Figma</a>
-                        <a href="webdesign.html">Webdesign</a>
-                        <a href="wordpress.html">Wordpress</a>
-                        <a href="graphics.html">Grafik</a>
-                        <a href="madcap.html">Madcap Flare</a>
-                        <a href="project-website.html">Projekt Website</a>
+                <input type="checkbox" id="nav-check" class="nav-check">
+                <label for="nav-check" class="nav-toggle"><i class="icon-menu"></i></label>
+
+                <div class="nav-items-wrapper">
+                    <a href="index.html">Home</a>
+                    <a href="#zeugnis">Arbeitszeugnis</a>
+                    <div class="dropdown">
+                        <a href="#projects">Projekte</a>
+                        <div class="dropdown-menu">
+                            <a href="figma.html">Figma</a>
+                            <a href="webdesign.html">Webdesign</a>
+                            <a href="wordpress.html">Wordpress</a>
+                            <a href="graphics.html">Grafik</a>
+                            <a href="madcap.html">Madcap Flare</a>
+                            <a href="project-website.html">Projekt Website</a>
+                        </div>
                     </div>
+                    <a href="#contact">Kontakt</a>
                 </div>
-                <a href="#contact">Kontakt</a>
             </div>
         </div>
     </div>
 
-    <div class="hero-wrapper">
+    <div class="hero-wrapper-landing">
         <div class="hero-bg-left"></div>
         <div class="hero-bg-right"></div>
 
         <div class="container hero-content">
             <div class="row hero-row">
-                <div class="col-7 hero-text">
+                <div class="col-md-7 hero-text">
                     <div class="supertitle">
                         Sandra Henkensiefken | Medien, Design & Content
                     </div>
                     <div class="hero-title">
                         Kreative Visionen.<br /> Digital umgesetzt.
                     </div>
+                    <div class="trapez-1"></div>
+                    <div class="trapez-2"></div>
                 </div>
-                <div class="col-5 hero-image-container">
+                <div class="col-md-5 hero-image-container">
                     <img class="hero-image" src="images/sandra_applicationphoto.png" alt="Sandra Bild" />
                 </div>
             </div>
@@ -185,7 +193,7 @@
                 <h2 class="heading">Skills & Tools</h2>
 
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-4 card-content">
                         <a href="figma.html" class="card h-100 p-4 custom-card-shadow text-decoration-none">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <i class="icon-layout-grid"></i>
@@ -194,10 +202,10 @@
                             <h3 class="card-title text-uppercase">FIGMA</h3>
                             <p class="card-text">Tiefgehende Prototyping-, Design-System- und
                                 Collaborations-Fähigkeiten.</p>
-                            </a>
+                        </a>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card h-100 p-4 custom-card-shadow">
+                    <div class="col-12 col-md-4 card-content">
+                        <a href="webdesign.html" class="card h-100 p-4 custom-card-shadow text-decoration-none">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <i class="icon-monitor"></i>
                                 <i class="icon-arrow-right arrow-icon"></i>
@@ -207,10 +215,10 @@
                                 responsiven Webseiten. Präzise Umsetzung
                                 von Figma-Designs in performanten HTML
                                 und CSS Code.</p>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card h-100 p-4 custom-card-shadow">
+                    <div class="col-12 col-md-4 card-content">
+                        <a href="wordpress.html" class="card h-100 p-4 custom-card-shadow text-decoration-none">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <i class="icon-file-text"></i>
                                 <i class="icon-arrow-right arrow-icon"></i>
@@ -218,12 +226,12 @@
                             <h3 class="card-title text-uppercase">Wordpress</h3>
                             <p class="card-text">Tiefgehende Prototyping-, Design-System-
                                 und Collaborations-Fähigkeiten.</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-4">
-                        <div class="card h-100 p-4 custom-card-shadow">
+                    <div class="col-12 col-md-4 card-content">
+                        <a href="graphics.html" class="card h-100 p-4 custom-card-shadow text-decoration-none">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <i class="icon-pen-tool"></i>
                                 <i class="icon-arrow-right arrow-icon"></i>
@@ -231,10 +239,10 @@
                             <h3 class="card-title text-uppercase">Grafik</h3>
                             <p class="card-text">Erstellung und Optimierung von digitalen Assets und
                                 Grafiken für Content und technische Dokumentation.</p>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card h-100 p-4 custom-card-shadow">
+                    <div class="col-12 col-md-4 card-content">
+                        <a href="madcap.html" class="card h-100 p-4 custom-card-shadow text-decoration-none">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <i class="icon-book-open"></i>
                                 <i class="icon-arrow-right arrow-icon"></i>
@@ -242,10 +250,10 @@
                             <h3 class="card-title text-uppercase">Madcap Flare</h3>
                             <p class="card-text">Design und Implementierung von HTML/CSS-Skins für das
                                 Redaktionssystem und Content-Strukturierung.</p>
-                        </div>
+                        </a>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card h-100 p-4 custom-card-shadow">
+                    <div class="col-12 col-md-4 card-content">
+                        <a href="project-website.html" class="card h-100 p-4 custom-card-shadow text-decoration-none">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <i class="icon-briefcase"></i>
                                 <i class="icon-arrow-right arrow-icon"></i>
@@ -253,7 +261,7 @@
                             <h3 class="card-title text-uppercase">Projekt Website</h3>
                             <p class="card-text">Detaillierte Vorstellung des Konzepts, des Designs
                                 und der technischen Entstehung dieser Seite.</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -266,15 +274,15 @@
                     &copy; 2025 Sandra Henkensiefken. Alle Rechte vorbehalten.
                 </div>
                 <div class="col-md-6 footer-links">
-                    <a href="#impressum">Impressum</a>
-                    <a href="#datenschutz">Datenschutz</a>
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Javascript -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="styles/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

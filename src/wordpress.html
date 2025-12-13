@@ -9,56 +9,113 @@
 </head>
 
 <body>
-    <div class="navigation">
+     <div class="navigation">
         <div class="row nav-row">
             <div class="col-6 logo-container">
                 <img class="logo" src="images/logo.svg" alt="Logo" />
             </div>
+
             <div class="col-6 nav-links">
-                <a href="index.html">Home</a>
-                <a href="#zeugnis">Arbeitszeugnis</a>
-                <div class="dropdown">
-                    <a href="#projects">Projekte</a>
-                    <div class="dropdown-menu">
-                        <a href="figma.html">Figma</a>
-                        <a href="webdesign.html">Webdesign</a>
-                        <a href="wordpress.html">Wordpress</a>
-                        <a href="graphics.html">Grafik</a>
-                        <a href="madcap.html">Madcap Flare</a>
-                        <a href="project-website.html">Projekt Website</a>
+                <input type="checkbox" id="nav-check" class="nav-check">
+                <label for="nav-check" class="nav-toggle"><i class="icon-menu"></i></label>
+                
+                <div class="nav-items-wrapper">
+                    <a href="index.html">Home</a>
+                    <a href="#zeugnis">Arbeitszeugnis</a>
+                    <div class="dropdown">
+                        <a href="#projects">Projekte</a>
+                        <div class="dropdown-menu">
+                            <a href="figma.html">Figma</a>
+                            <a href="webdesign.html">Webdesign</a>
+                            <a href="wordpress.html">Wordpress</a>
+                            <a href="graphics.html">Grafik</a>
+                            <a href="madcap.html">Madcap Flare</a>
+                            <a href="project-website.html">Projekt Website</a>
+                        </div>
                     </div>
+                    <a href="#contact">Kontakt</a>
                 </div>
-                <a href="#contact">Kontakt</a>
             </div>
         </div>
     </div>
 
     <div class="hero-wrapper">
-        <div class="hero-bg-left"></div>
-        <div class="hero-bg-right"></div>
+        <div class="hero-bg-left-page"></div>
+        <div class="hero-bg-right-page"></div>
 
         <div class="container hero-content">
+            <div class="heading">
+                Wordpress
+            </div>
         </div>
     </div>
     <div class="main-content">
+        <div class="container learnings">
+            <div class="heading">
+                Design-Strategie und Erfolgsfaktor Team
+            </div>
+            <div class="learnings-content">
+                <div class="row">
+                    <div class="col-md-6 team">
+                        <i class="icon-users"></i>
+                        <p></p>
+                        <div class="learnings-heading">
+                            Zusammenarbeit & Lösungsorientiertes Feedback
+                        </div>
+                        <div class="learnings-text">
+                            Design ist Teamarbeit. Ich habe gelernt, den Austausch und das gemeinsame Brainstorming
+                            aktiv zu nutzen, um die bestmöglichen Lösungen zu finden. Mein Fokus liegt auf der schnellen
+                            und lösungsorientierten Umsetzung von Kritik, um Design-Iterationen zügig voranzutreiben.
+                            <p></p>
+                            <span class="cursive">Ich sehe Feedback als notwendigen Motor für besseres Design.</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 workway">
+                        <i class="icon-palette"></i>
+                        <p></p>
+                        <div class="learnings-heading">
+                            Corporate Design (CD) Konsequent Anwenden
+                        </div>
+                        <div class="learnings-text">
+                            Beim Erstellen von Mockups für Webdesigns stelle ich sicher, dass das Corporate Design (CD)
+                            von Anfang an konsequent angewendet wird. Durch die Nutzung von Komponenten und der
+                            Zusammenstellung von Grafiken sorge ich für ein stimmiges Gesamtbild, das die Marke klar
+                            repräsentiert.
+                            <ul>
+                                <li>Fokus auf CD-Vorgaben bei Farben und Typografie.</li>
+                                <li>Grafiken und Komponenten für Konsistenz zusammenstellen.</li>
+                                <li>Mockups erstellen und für die Umsetzung vorbereiten.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-work-container">
+            <div class="container my-work">
+                <div class="heading">
+                    KONKRETE PROJEKTE (VISUELLE BELEGE MEINER ARBEIT)
+                </div>
+            </div>
+        </div>
 
     </div>
-    <div class="footer">
+     <div class="footer">
         <div class="container">
             <div class="row footer-content">
                 <div class="col-md-6 footer-text">
                     &copy; 2025 Sandra Henkensiefken. Alle Rechte vorbehalten.
                 </div>
                 <div class="col-md-6 footer-links">
-                    <a href="#impressum">Impressum</a>
-                    <a href="#datenschutz">Datenschutz</a>
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Javascript -->
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="styles/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

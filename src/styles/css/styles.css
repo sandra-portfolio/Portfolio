@@ -18478,6 +18478,7 @@ textarea.form-control-lg {
 
 /* --- ZENTRALER MAX-BREITEN CONTAINER --- */
 /* Mixin zur Definition einer Schriftfamilie */
+/* --- Navigation SCSS --- */
 .navigation {
   background-color: #2A363B;
   padding: 1.5rem 4rem;
@@ -18487,6 +18488,11 @@ textarea.form-control-lg {
   max-width: 1320px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+}
+.navigation .nav-row .nav-check,
+.navigation .nav-row .nav-toggle {
+  display: none;
 }
 .navigation .nav-row .logo-container {
   display: flex;
@@ -18498,9 +18504,14 @@ textarea.form-control-lg {
 }
 .navigation .nav-row .nav-links {
   display: flex;
-  gap: 2rem;
   align-items: center;
   justify-content: flex-end;
+  position: relative;
+}
+.navigation .nav-row .nav-links .nav-items-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 .navigation .nav-row .nav-links a {
   text-decoration: none;
@@ -18517,37 +18528,31 @@ textarea.form-control-lg {
   color: #D4AC64;
   border-bottom: 2px solid #D4AC64;
 }
+.navigation .nav-row .nav-links {
+  /* Dropdown-Styles (Desktop) */
+}
 .navigation .nav-row .nav-links .dropdown {
   position: relative;
-  /* Anchor für das absolute Menü */
   height: 100%;
   display: flex;
   align-items: center;
-  /* Der Dropdown-Toggle-Link erbt alle 'a'-Styles, das ist korrekt */
-  /* Das versteckte Untermenü */
 }
 .navigation .nav-row .nav-links .dropdown .dropdown-menu {
   position: absolute;
   top: 100%;
-  /* Platziert das Menü direkt unter dem Link */
   left: 50%;
   transform: translateX(-50%);
-  /* Zentriert das Menü unter dem Link */
   z-index: 1000;
-  /* Styling des Menü-Containers */
   background-color: rgb(52.603960396, 67.6336633663, 73.896039604);
   min-width: 180px;
   padding: 5px 0;
   border-radius: 4px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-  /* Verbergen durch Opacity und Visibility */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  /* Vertikale Anordnung der Unterpunkte */
   display: flex;
   flex-direction: column;
-  /* Links im Untermenü */
 }
 .navigation .nav-row .nav-links .dropdown .dropdown-menu a {
   padding: 10px 15px;
@@ -18557,21 +18562,95 @@ textarea.form-control-lg {
   text-transform: none;
   /* Keine Großbuchstaben */
   font-weight: 400;
-  /* Unterpunkte haben keinen Bottom-Border */
   border-bottom: none;
+  margin: 5px;
 }
 .navigation .nav-row .nav-links .dropdown .dropdown-menu a:hover {
   color: #D4AC64;
   background-color: rgb(73.8118811881, 94.900990099, 103.6881188119);
-}
-.navigation .nav-row .nav-links .dropdown {
-  /* Dropdown beim Hovern anzeigen */
 }
 .navigation .nav-row .nav-links .dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
 }
 
+/* ---------------------------------------------------------------------- */
+/* --- RESPONSIVE / MOBILE STYLES (Hamburger-Menü) --- */
+/* ---------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .navigation {
+    padding: 1rem 1rem;
+  }
+  .navigation .nav-row .logo-container {
+    flex: 1;
+  }
+  .navigation .nav-row .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    background: none;
+    border: none;
+  }
+  .navigation .nav-row .nav-links .nav-check {
+    display: none;
+  }
+  .navigation .nav-row .nav-links .nav-items-wrapper {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100vw;
+    position: absolute;
+    top: 160%;
+    right: -16px;
+    z-index: 999;
+    background-color: #2A363B;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    padding: 10px 0;
+  }
+  .navigation .nav-row .nav-links .nav-items-wrapper a {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: left;
+    border-bottom: none;
+    margin: 0;
+  }
+  .navigation .nav-row .nav-links .nav-items-wrapper a:hover {
+    background-color: rgb(52.603960396, 67.6336633663, 73.896039604);
+  }
+  .navigation .nav-row .nav-links .nav-items-wrapper .dropdown {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-bottom: none;
+  }
+  .navigation .nav-row .nav-links .nav-items-wrapper .dropdown:hover {
+    background-color: rgb(52.603960396, 67.6336633663, 73.896039604);
+  }
+  .navigation .nav-row .nav-links .nav-items-wrapper {
+    /* Mobile Dropdown-Styles */
+  }
+  .navigation .nav-row .nav-links .nav-items-wrapper .dropdown .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+    padding-left: 20px;
+  }
+  .navigation .nav-row #nav-check:checked ~ .nav-items-wrapper {
+    display: flex;
+  }
+}
 .footer {
   background-color: #2A363B;
   color: #fff;
@@ -18592,6 +18671,12 @@ textarea.form-control-lg {
   font-weight: 700;
   margin-bottom: 2rem;
   text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.5rem;
+    padding: 20px;
+  }
 }
 
 /* FIRA CODE */
@@ -18698,13 +18783,21 @@ body {
   margin: 0;
 }
 
+body,
+p,
+h1, h2, h3, h4, h5, h6,
+li {
+  hyphens: auto;
+  overflow-wrap: break-word; /* Wichtig als Rückfall-Mechanismus */
+}
+
 /* --- Landing Page --- */
-.hero-wrapper {
+.hero-wrapper-landing {
   position: relative;
   overflow: hidden;
   min-height: 360px;
 }
-.hero-wrapper .hero-bg-left {
+.hero-wrapper-landing .hero-bg-left {
   position: absolute;
   left: 0;
   top: 0;
@@ -18714,7 +18807,12 @@ body {
   clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
   z-index: 1;
 }
-.hero-wrapper .hero-bg-right {
+@media (max-width: 768px) {
+  .hero-wrapper-landing .hero-bg-left {
+    width: 100vw;
+  }
+}
+.hero-wrapper-landing .hero-bg-right {
   position: absolute;
   right: 0;
   top: 0;
@@ -18725,18 +18823,24 @@ body {
   background-position: center;
   z-index: 0;
 }
-.hero-wrapper .hero-content {
+@media (max-width: 768px) {
+  .hero-wrapper-landing .hero-bg-right {
+    width: 100vw;
+  }
+}
+.hero-wrapper-landing .hero-content {
   position: relative;
   z-index: 5;
   padding-top: 6rem;
 }
-.hero-wrapper .hero-content .hero-row {
+.hero-wrapper-landing .hero-content .hero-row {
   display: flex;
 }
-.hero-wrapper .hero-content .hero-row .hero-text {
+.hero-wrapper-landing .hero-content .hero-row .hero-text {
   color: #fff;
+  position: relative;
 }
-.hero-wrapper .hero-content .hero-row .hero-text .supertitle {
+.hero-wrapper-landing .hero-content .hero-row .hero-text .supertitle {
   font-family: "Fira Code", monospace;
   font-weight: 600;
   font-size: 1rem;
@@ -18745,7 +18849,7 @@ body {
   color: #D1C8C2;
   margin-bottom: 0.5rem;
 }
-.hero-wrapper .hero-content .hero-row .hero-text .hero-title {
+.hero-wrapper-landing .hero-content .hero-row .hero-text .hero-title {
   font-family: "Roboto Slab", serif;
   font-size: 3.5rem;
   font-weight: 700;
@@ -18753,10 +18857,40 @@ body {
   margin-bottom: 0;
   text-shadow: 4px 2px 0 #698F8F;
 }
-.hero-wrapper .hero-content .hero-row .hero-image-container {
+.hero-wrapper-landing .hero-content .hero-row .hero-text .trapez-1 {
+  width: 100px;
+  height: 50px;
+  transform: skew(-20deg);
+  background: #D4AC64;
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .hero-wrapper-landing .hero-content .hero-row .hero-text .trapez-1 {
+    display: none;
+  }
+}
+.hero-wrapper-landing .hero-content .hero-row .hero-text .trapez-2 {
+  width: 140px;
+  height: 70px;
+  transform: skew(-20deg);
+  background: #698F8F;
+  position: absolute;
+  top: 10px;
+  right: -60px;
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  .hero-wrapper-landing .hero-content .hero-row .hero-text .trapez-2 {
+    display: none;
+  }
+}
+.hero-wrapper-landing .hero-content .hero-row .hero-image-container {
   text-align: right;
 }
-.hero-wrapper .hero-content .hero-row .hero-image-container .hero-image {
+.hero-wrapper-landing .hero-content .hero-row .hero-image-container .hero-image {
   width: 300px;
   height: auto;
   position: relative;
@@ -18772,6 +18906,14 @@ body {
 }
 .main-content .about-me {
   padding: 4rem 0;
+}
+.main-content .about-me .row {
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .main-content .about-me .row .philosophie-text {
+    padding: 0;
+  }
 }
 .main-content .about-me .row .philosophie-text .text-box {
   background-color: #698F8F;
@@ -18806,8 +18948,18 @@ body {
   color: #D4AC64;
   font-size: 25px;
 }
+@media (max-width: 768px) {
+  .main-content .about-me .row .about-me-text {
+    margin-top: 30px;
+  }
+}
 .main-content .personal-information {
   background-color: #D1C8C2;
+}
+@media (max-width: 768px) {
+  .main-content .personal-information {
+    padding: 20px;
+  }
 }
 .main-content .personal-information .container {
   padding: 4rem 0;
@@ -18870,36 +19022,44 @@ body {
 .main-content .work-samples .container .row {
   margin: 15px 0;
 }
-.main-content .work-samples .container .row .card {
+@media (max-width: 768px) {
+  .main-content .work-samples .container .row {
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .main-content .work-samples .container .row .card-content {
+    margin-bottom: 15px;
+  }
+}
+.main-content .work-samples .container .row .card-content .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.main-content .work-samples .container .row .card:hover {
+.main-content .work-samples .container .row .card-content .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-.main-content .work-samples .container .row .card:hover .arrow-icon {
+.main-content .work-samples .container .row .card-content .card:hover .arrow-icon {
   color: #D4AC64;
 }
-.main-content .work-samples .container .row .custom-card-shadow {
+.main-content .work-samples .container .row .card-content .custom-card-shadow {
   border: 1px solid #dedede;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
-.main-content .work-samples .container .row .custom-card-shadow i {
+.main-content .work-samples .container .row .card-content .custom-card-shadow i {
   font-size: 30px;
 }
-.main-content .work-samples .container .row .custom-card-shadow .arrow-icon {
+.main-content .work-samples .container .row .card-content .custom-card-shadow .arrow-icon {
   font-size: 24px;
 }
-.main-content .work-samples .container .row .custom-card-shadow .card-text {
+.main-content .work-samples .container .row .card-content .custom-card-shadow .card-text {
   color: rgb(73.8118811881, 94.900990099, 103.6881188119);
   font-size: 0.9em;
 }
 
-/* --- Figma Page --- */
 .hero-wrapper {
   position: relative;
   overflow: hidden;
-  min-height: 360px;
 }
 .hero-wrapper .hero-bg-left-page {
   position: absolute;
@@ -18933,10 +19093,13 @@ body {
   text-align: center;
   color: #fff;
   font-family: "Roboto", sans-serif;
-  font-size: 300px;
   font-weight: 900;
   text-shadow: 3px 3px 0 #698F8F;
-  text-shadow: 0 0 5px #698F8F, 1px 1px 0 #698F8F, 2px 2px 0 #698F8F, 3px 3px 0 #698F8F, 4px 4px 0 #698F8F, 5px 5px 0 #698F8F, 6px 6px 0 #698F8F, 7px 7px 0 #698F8F, 8px 8px 0 #698F8F, 9px 9px 0 #698F8F, 10px 10px 0 #698F8F, 11px 11px 0 #698F8F, 12px 12px 0 #698F8F, 13px 13px 0 #698F8F, 14px 14px 0 #698F8F, 15px 15px 0 #698F8F, 16px 16px 0 #698F8F, 17px 17px 0 #698F8F, 18px 18px 0 #698F8F, 19px 19px 0 #698F8F, 20px 20px 0 #698F8F, 21px 21px 0 #698F8F, 22px 22px 0 #698F8F, 23px 23px 0 #698F8F, 24px 24px 0 #698F8F, 25px 25px 0 #698F8F;
+  text-shadow: 0 0 1px #698F8F, 1px 1px 0 #698F8F, 2px 2px 0 #698F8F, 3px 3px 0 #698F8F, 4px 4px 0 #698F8F, 5px 5px 0 #698F8F, 6px 6px 0 #698F8F, 7px 7px 0 #698F8F, 8px 8px 0 #698F8F, 9px 9px 0 #698F8F, 10px 10px 0 #698F8F, 11px 11px 0 #698F8F, 12px 12px 0 #698F8F, 13px 13px 0 #698F8F, 14px 14px 0 #698F8F, 15px 15px 0 #698F8F, 16px 16px 0 #698F8F, 17px 17px 0 #698F8F, 18px 18px 0 #698F8F, 19px 19px 0 #698F8F, 20px 20px 0 #698F8F, 21px 21px 0 #698F8F, 22px 22px 0 #698F8F, 23px 23px 0 #698F8F, 24px 24px 0 #698F8F, 25px 25px 0 #698F8F;
+  white-space: nowrap;
+  display: block;
+  max-width: 95vw;
+  font-size: clamp(3rem, 10vw, 15.625vw);
 }
 
 .main-content .learnings {
@@ -18947,6 +19110,11 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
   background-color: #fff;
   padding: 40px;
+}
+@media (max-width: 768px) {
+  .main-content .learnings .learnings-content {
+    padding: 20px;
+  }
 }
 .main-content .learnings .learnings-content .row {
   margin: 0;
@@ -18973,6 +19141,11 @@ body {
 }
 .main-content .my-work-container .my-work {
   padding: 4rem 0;
+}
+.main-content .my-work-container .my-work .row {
+  margin: 0;
+}
+.main-content .my-work-container .my-work {
   /* Hover-Effekt für Projektkarten */
 }
 .main-content .my-work-container .my-work .project-card {
@@ -19022,6 +19195,57 @@ body {
 .main-content .my-work-container .my-work .btn-close-white:hover {
   opacity: 1;
   transform: rotate(90deg);
+}
+
+.learnings-content .topic-explain {
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+.learnings-content .topic-explain .explain-heading {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+.learnings-content .topic-explain .icon-book-open {
+  color: #D4AC64;
+}
+
+.praxis-card {
+  border: 1px solid #dedede;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+.praxis-card .praxis-text-container .praxis-supertitle {
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #D4AC64;
+  margin-bottom: 10px;
+}
+.praxis-card .praxis-text-container .praxis-heading {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.praxis-card .praxis-text-container .praxis-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.praxis-card .praxis-text-container .praxis-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+.praxis-card .praxis-text-container .praxis-list li {
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

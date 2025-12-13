@@ -1,6 +1,8 @@
 @use "../abstracts/variables" as var;
 @use "../abstracts/mixins" as mix;
 
+/* --- Navigation SCSS --- */
+
 .navigation {
   background-color: var.$color-primary;
   padding: 1.5rem 4rem;
@@ -8,6 +10,15 @@
   .nav-row {
     height: 100%;
     @include mix.limit-content-width;
+
+    // Desktop: Der Ankerpunkt für das gesamte Layout
+    position: relative;
+
+    // Die Checkbox und das Label sind auf Desktop IMMER versteckt
+    .nav-check,
+    .nav-toggle {
+      display: none;
+    }
 
     .logo-container {
       display: flex;
@@ -17,14 +28,22 @@
       .logo {
         height: 25px;
       }
-
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
       align-items: center;
       justify-content: flex-end;
+
+      // WICHTIG: Setzt den Anker für den mobilen Burger-Toggle
+      position: relative;
+
+      .nav-items-wrapper {
+        // Desktop: Alle Links nebeneinander
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
 
       a {
         text-decoration: none;
@@ -39,47 +58,37 @@
 
         &:hover {
           color: var.$color-accent;
-          // Optionale Unterstreichung bei Hover
           border-bottom: 2px solid var.$color-accent;
         }
       }
 
+      /* Dropdown-Styles (Desktop) */
       .dropdown {
         position: relative;
-        /* Anchor für das absolute Menü */
         height: 100%;
         display: flex;
         align-items: center;
 
-        /* Der Dropdown-Toggle-Link erbt alle 'a'-Styles, das ist korrekt */
-
-        /* Das versteckte Untermenü */
         .dropdown-menu {
           position: absolute;
           top: 100%;
-          /* Platziert das Menü direkt unter dem Link */
           left: 50%;
           transform: translateX(-50%);
-          /* Zentriert das Menü unter dem Link */
           z-index: 1000;
 
-          /* Styling des Menü-Containers */
           background-color: lighten(var.$color-primary, 5%);
           min-width: 180px;
           padding: 5px 0;
           border-radius: 4px;
           box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-
-          /* Verbergen durch Opacity und Visibility */
           opacity: 0;
           visibility: hidden;
           transition: opacity 0.3s ease, visibility 0.3s ease;
 
-          /* Vertikale Anordnung der Unterpunkte */
+          // Vertikale Anordnung der Unterpunkte
           display: flex;
           flex-direction: column;
 
-          /* Links im Untermenü */
           a {
             padding: 10px 15px;
             text-align: left;
@@ -88,22 +97,135 @@
             text-transform: none;
             /* Keine Großbuchstaben */
             font-weight: 400;
-
-            /* Unterpunkte haben keinen Bottom-Border */
             border-bottom: none;
-
-            &:hover {
+            margin: 5px;
+             &:hover {
               color: var.$color-accent;
               background-color: lighten(var.$color-primary, 15%);
+
             }
           }
         }
 
-        /* Dropdown beim Hovern anzeigen */
         &:hover .dropdown-menu {
           opacity: 1;
           visibility: visible;
         }
+      }
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- RESPONSIVE / MOBILE STYLES (Hamburger-Menü) --- */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .navigation {
+    padding: 1rem 1rem; // Padding auf Mobile reduzieren
+
+    .nav-row {
+
+      // Logo (nimmt auf Mobile nur so viel Platz ein wie nötig)
+      .logo-container {
+        flex: 1;
+      }
+
+      // 1. ANZEIGE DES HAMBURGER-TOGGLES
+      .nav-toggle {
+        display: block; // Hamburger-Icon sichtbar machen
+
+        position: absolute;
+        top: 50%;
+        right: 1rem; // Abstand vom rechten Rand
+        transform: translateY(-50%);
+
+        // Styling des Icons (Farbe, Größe, etc.)
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1000;
+        background: none;
+        border: none;
+      }
+
+      // 2. STEUERUNG UND LAYOUT DER LINKS
+      .nav-links {
+
+        // Die Checkbox muss weiterhin versteckt bleiben
+        .nav-check {
+          display: none;
+        }
+
+        // Der Container für alle Links wird auf Mobile gesteuert
+        .nav-items-wrapper {
+
+          // STANDARD: Versteckt, volle Breite und unter dem Header
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0; // Kein Gap im vertikalen Menü
+
+          width: 100vw; // Volle Bildschirmbreite
+          position: absolute;
+          top: 160%;
+          right:-16px;
+          z-index: 999;
+
+          background-color: var.$color-primary;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+          padding: 10px 0;
+
+          // Mobile Link-Styles
+          a {
+            display: block; // Muss block sein, um 100% Breite zu nehmen
+            width: 100%;
+            padding: 10px 20px;
+            text-align: left;
+            border-bottom: none; // Entfernt die Border vom Desktop
+            margin:0;
+
+            // Hover-Effekt ist auf Touch-Geräten oft irrelevant, kann aber bleiben
+            &:hover {
+              background-color: lighten(var.$color-primary, 5%);
+            }
+          }
+          .dropdown {
+            display: block; // Muss block sein, um 100% Breite zu nehmen
+            width: 100%;
+            text-align: left;
+            border-bottom: none; // Entfernt die Border vom Desktop
+
+            // Hover-Effekt ist auf Touch-Geräten oft irrelevant, kann aber bleiben
+            &:hover {
+              background-color: lighten(var.$color-primary, 5%);
+            }
+          }
+
+          /* Mobile Dropdown-Styles */
+          .dropdown {
+
+            // Verhindert, dass das Dropdown nach unten/oben verschwindet
+            .dropdown-menu {
+              position: static; // Bleibt im normalen Dokumentenfluss
+              opacity: 1; // Immer sichtbar, wenn das Menü offen ist
+              visibility: visible;
+              transform: none;
+              box-shadow: none; // Keine extra Schatten
+              background-color: transparent; // Oder eine hellere Farbe
+              border:none;
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+
+      // 3. ENTSCHEIDENDE UMSCHALT-LOGIK (CSS-Only)
+      // Wenn die Checkbox im .nav-links Container gecheckt ist,
+      // zeige das Geschwister-Element (.nav-items-wrapper) an.
+      #nav-check:checked~.nav-items-wrapper {
+        display: flex; // Menü aufklappen
       }
     }
   }
