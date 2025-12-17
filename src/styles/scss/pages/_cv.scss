@@ -1,0 +1,282 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.skills-container {
+    padding: 4rem 0;
+
+    .skills-content {
+        border: 1px solid #dedede;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        background-color: #fff;
+        padding: 40px;
+
+        @media (max-width: 768px) {
+            padding: 20px;
+        }
+
+        .skills-section {
+            margin-bottom: 3rem;
+
+            .color-secondary {
+                color: var.$color-secondary;
+            }
+
+            .color-accent {
+                color: var.$color-accent;
+            }
+
+            .skills-heading {
+                font-family: "Roboto Slab", serif;
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-bottom: 1.5rem;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                i {
+                    font-size: 2rem;
+                }
+            }
+
+            .skills-row {
+                .skill-name {
+                    font-weight: 400;
+                    font-size: 1.1rem;
+
+                    @media (max-width: 768px) {
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .skill-rating {
+                    text-align: right;
+
+                    @media (max-width: 768px) {
+                        text-align: center;
+                    }
+
+                    .rating-container {
+                        padding: 5px 15px;
+                        border-radius: 30px;
+                        font-size: 0.75rem;
+                        font-weight: 600;
+                    }
+
+                    .expert-rating {
+                        background-color: var.$color-secondary;
+                        color: #fff;
+                        display: inline-block;
+                    }
+
+                    .expert-rating-accent {
+                        background-color: var.$color-accent;
+                        color: #fff;
+                        display: inline-block;
+                    }
+
+                    .middle-rating {
+                        background-color: var.$color-secondary;
+                        color: #fff;
+                        display: inline-block;
+                    }
+
+                    .middle-rating-accent {
+                        background-color: var.$color-accent;
+                        color: #fff;
+                        display: inline-block;
+                    }
+
+                    .basic-rating {
+                        background-color: #e0e0e0;
+                        color: #333;
+                        display: inline-block;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.cv-container {
+    background-image: url(../../images/Triangle_pattern.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .container {
+        padding: 4rem 0;
+
+        .step {
+            // Flexbox für die Ausrichtung der Nummer und des Textes
+            display: flex;
+            margin: 30px 0;
+            overflow: hidden;
+
+            .step-indicator {
+                // Positionierung und Form des Kreises
+                position: relative;
+                box-sizing: border-box;
+                flex: 0 0 40px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+
+                @media (max-width: 768px) {
+                    display: none !important;
+                }
+
+                // Farben und Zentrierung der Zahl
+                background-color: var.$color-accent; // Verwende die Akzentfarbe
+                color: #fff; // Weiße Zahl auf dunklem Akzenthintergrund
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.25em;
+                z-index: 10;
+
+                // Das Pseudo-Element für die vertikale Linie
+                &::before {
+                    content: '';
+                    position: absolute;
+
+                    // Startet in der Mitte des Kreises
+                    top: 100%;
+                    left: 50%;
+
+                    // Definiert die Linie
+                    width: 2px;
+                    height: 9999px;
+                    background-color: #dedede;
+
+                    // Zentrierung des Strichs
+                    transform: translateX(-50%);
+                    z-index: 1;
+                }
+            }
+
+            .step-content {
+                // Abstand links vom vertikalen Strich
+                padding: 30px;
+                background-color: #fff;
+                border: 1px solid #dedede;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+                margin-left: 20px;
+                width: 100%;
+
+                @media (max-width: 768px) {
+                    margin: 0;
+                }
+
+                .step-timeline {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                    color: var.$color-accent;
+                }
+
+                .step-heading {
+                    // Die Überschrift verwendet deine Textfarbe
+                    font-family: "Fira Code", monospace;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                    color: var.$color-primary;
+                    margin-top: 0;
+                }
+
+                .step-location {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+                    color: #6D6D6D;
+                }
+
+                .step-text {
+                    ul {
+                        margin: 10px 0;
+
+                        li {
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    .row {
+                        .col-md-4 {
+                            .studium-container {
+                                background-color: rgba(212, 192, 157, 0.2);
+                                padding: 10px;
+
+                                @media (max-width: 768px) {
+                                    margin-bottom: 10px;
+                                }
+
+                                .studium-section-title {
+                                    font-family: "Roboto", monospace;
+                                    font-weight: 600;
+                                    font-size: 1rem;
+                                    margin-bottom: 10px;
+                                    color: var.$color-accent;
+                                    position: relative;
+
+                                    &:after {
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: -8px;
+                                        /* Position unter dem Wort */
+                                        width: 15%;
+                                        /* Breite des Strichs (z.B. nur die Hälfte des Wortes) */
+                                        height: 3px;
+                                        /* Dicke des Strichs */
+                                        background-color: var.$color-accent;
+                                        /* Farbe */
+                                    }
+                                }
+
+                                .knowledge-container {
+                                    margin: 20px 0 5px;
+
+                                    .knowledge-content {
+                                        border: 1px solid #dbdbdb;
+                                        background-color: #fff;
+                                        color: var.$color-primary;
+                                        padding: 3px 5px;
+                                        margin: 5px 0;
+                                        display: inline-block;
+                                        border-radius: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .praxis-container {
+                        background-color: #F2F2F2;
+                        padding: 10px 20px;
+                        border-left: 3px solid var.$color-accent;
+                        margin-top: 20px;
+
+                        .praxis-title {
+                            font-family: "Fira Code", monospace;
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            margin-bottom: 20px;
+                            color: var.$color-primary;
+                            margin-top: 0;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                        }
+
+                        .praxis-text {
+                            margin: 10px 0;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

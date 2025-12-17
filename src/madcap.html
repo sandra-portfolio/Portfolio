@@ -21,7 +21,8 @@
 
                 <div class="nav-items-wrapper">
                     <a href="index.html">Home</a>
-                    <a href="#zeugnis">Arbeitszeugnis</a>
+                    <a href="cv.html">Lebenslauf</a>
+                    <a href="arbeitszeugnisse.html">Arbeitszeugnis</a>
                     <div class="dropdown">
                         <a href="#projects">Projekte</a>
                         <div class="dropdown-menu">
@@ -33,7 +34,6 @@
                             <a href="project-website.html">Projekt Website</a>
                         </div>
                     </div>
-                    <a href="#contact">Kontakt</a>
                 </div>
             </div>
         </div>
@@ -119,71 +119,200 @@
                 </div>
             </div>
         </div>
-        <div class="my-work-container">
-            <div class="container my-work">
+        <div class="showcase-container">
+            <div class="container showcase">
                 <div class="heading">
                     Projekt-Showcase: MadCap Flare in der Praxis
                 </div>
-                <div class="row praxis-card">
-                    <div class="col-md-6 praxis-image-container">
+                <div class="showcase-step">
+                    <div class="showcase-step-indicator">1</div>
+                    <div class="showcase-step-content row">
+                        <div class="col-lg showcase-step-main">
+                            <h2 class="showcase-step-supertitle">Phase 1: Strategische Konzeption</h2>
+                            <h2 class="showcase-step-heading">Konsequente Übernahme des <b
+                                    class="accent">Design-System</b></h2>
+                            <div class="showcase-text">
+                                Der Grundstein für Konsistenz wurde in Figma gelegt. Die Master-Layouts wurden bis ins
+                                Detail für die Überführung in MadCap Flare vorbereitet, um eine pixelgenaue
+                                Übereinstimmung
+                                der Dokumentation mit dem Produkt-UI zu gewährleisten.
+                                <p></p>
+                                <ul class="showcase-list">
+                                    <li>
+                                        Definition von Typografie, Abständen und Farbcodes.
+                                    </li>
+                                    <li>
+                                        Ausarbeitung von Custom-Layouts für Header und Navigation.
+                                    </li>
+                                    <li>
+                                        Sicherstellung der Responsivität bereits in der Planungsphase.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="text-center p-2">
+                                <!-- Deklarative Bootstrap-Attribute zum Öffnen des Modals -->
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                                    class="d-inline-block text-decoration-none">
+                                    <img class="showcase-image" src="images/Madcap Figma.png"
+                                        alt="Madcap Flare Showcase 1" />
+                                </a>
 
-                    </div>
-                    <div class="col-md-6 praxis-text-container">
-                        <div class="praxis-supertitle">
-                            Phase 1: Strategische Konzeption
-                        </div>
-                        <div class="praxis-heading">
-                            Konsequente Übernahme des Design-Systems
-                        </div>
-                        <div class="praxis-text">
-                            Der Grundstein für Konsistenz wurde in Figma gelegt. Die Master-Layouts wurden bis ins
-                            Detail für die Überführung in MadCap Flare vorbereitet, um eine pixelgenaue Übereinstimmung
-                            der Dokumentation mit dem Produkt-UI zu gewährleisten.
-                            <ul class="praxis-list">
-                                <li>
-                                    Definition von Typografie, Abständen und Farbcodes.
-                                </li>
-                                <li>
-                                    Ausarbeitung von Custom-Layouts für Header und Navigation.
-                                </li>
-                                <li>
-                                    Sicherstellung der Responsivität bereits in der Planungsphase.
-                                </li>
-                            </ul>
+                                <p class="text-center mt-2 text-muted" style="font-size: 0.75rem; font-style: italic;">
+                                    Fokus: Konsistenz und UX/UI-Vorgaben (Klicken zum Vergrößern)</p>
+                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="row praxis-card">
-                    <div class="col-md-6 praxis-text-container">
-                        <div class="praxis-supertitle">
-                            Phase 2: Technische Überführung
+                <div class="showcase-step">
+                    <div class="showcase-step-indicator">2</div>
+                    <div class="showcase-step-content row">
+                        <div class="col-lg showcase-step-main">
+                            <h2 class="showcase-step-supertitle">Phase 2: Technische Überführung</h2>
+                            <h2 class="showcase-step-heading">Implementierung und <b class="accent">Single-Sourcing</b>
+                                Power</h2>
+                            <div class="showcase-text">
+                                Die Entwürfe wurden mittels reinem HTML/CSS in MadCap Flare Stylesheets und Master Pages
+                                umgesetzt. Dies nutzte das volle Potenzial von Single-Sourcing zur effizienten
+                                Erstellung
+                                verschiedener Zielformate.
+                                <p></p>
+                                <ul class="showcase-list">
+                                    <li>
+                                        Erstellung von Custom-Code zur Design-Anpassung.
+                                    </li>
+                                    <li>
+                                        Einsatz von Conditional Tags für Zielgruppen-Spezifika.
+                                    </li>
+                                    <li>
+                                        Minimierung der Redundanz im gesamten Projekt.
+                                    </li>
+                                </ul>
+                                <p></p>
+                                <hr />
+                                <h2 class="showcase-step-heading">Design-Ergebnisse & UX-Impact</h2>
+                                <div class="showcase-text">
+                                    Durch die Etablierung dieses neuen, designkonformen Wissenszentrums wurde von Anfang
+                                    an ein hoher Qualitätsstandard gesetzt. Die nahtlose visuelle Konsistenz zwischen
+                                    dem neuen Produkt und der Dokumentation stärkt das Markenvertrauen sofort und bietet
+                                    dem Endbenutzer eine intuitive Orientierungshilfe.
+                                    <p></p>
+                                    <ul class="showcase-list">
+                                        <li>
+                                            <i class="icon-maximize"></i>
+                                            <div>
+                                                Im System verankert: Direkter Aufruf der passenden Hilfe aus der
+                                                Anwendung heraus (Context-Sensitive Help).
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon-user-check"></i>
+                                            <div>
+                                                Einfache Selbsthilfe: Das klare Design ermöglicht Benutzern,
+                                                Probleme schnell und selbstständig zu lösen.
+                                            </div>
+                                        </li>
+                                </div>
+                            </div>
                         </div>
-                        <div class="praxis-heading">
-                            Implementierung und Single-Sourcing Power
-                        </div>
-                        <div class="praxis-text">
-                            Die Entwürfe wurden mittels reinem HTML/CSS in MadCap Flare Stylesheets und Master Pages
-                            umgesetzt. Dies nutzte das volle Potenzial von Single-Sourcing zur effizienten Erstellung
-                            verschiedener Zielformate.
-                            <ul class="praxis-list">
-                                <li>
-                                    Erstellung von Custom-Code zur Design-Anpassung.
-                                </li>
-                                <li>
-                                    Einsatz von Conditional Tags für Zielgruppen-Spezifika.
-                                </li>
-                                <li>
-                                    Minimierung der Redundanz im gesamten Projekt.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 praxis-image-container">
+                        <div class="col-lg-5">
+                            <div class="text-center p-2">
+                                <!-- Deklarative Bootstrap-Attribute zum Öffnen des Modals -->
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal2"
+                                    class="d-inline-block text-decoration-none">
+                                    <img class="showcase-image" src="images/Madcap Ausgabe.png"
+                                        alt="Madcap Flare Showcase 2" />
+                                </a>
 
+                                <p class="text-center mt-2 text-muted" style="font-size: 0.75rem; font-style: italic;">
+                                    Startseite der Online Hilfe</p>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#lightboxModal3"
+                                    class="d-inline-block text-decoration-none">
+                                    <img class="showcase-image" src="images/Madcap Ausgabe 2.png"
+                                        alt="Madcap Flare Showcase 2" />
+                                </a>
+
+                                <p class="text-center mt-2 text-muted" style="font-size: 0.75rem; font-style: italic;">
+                                    Eine der Unterseiten und die Suche der Online Hilfe</p>
+                            </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- *************************************************************** -->
+        <!-- BOOTSTRAP MODAL STRUKTUR (Lightbox - BLEIBT AUSSERHALB DES GRIDS) -->
+        <!-- *************************************************************** -->
+
+        <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxModalLabel"
+            aria-hidden="true">
+            <!-- Nutzung von modal-xl und modal-dialog-centered -->
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <!-- Hintergrund des Inhalts ist transparent und ohne Rahmen -->
+                <div class="modal-content bg-transparent border-0">
+                    <!-- Modal Body ohne Padding, mit schwarzem Hintergrund -->
+                    <div class="modal-body modal-body-image">
+
+                        <!-- Das große Bild (simuliert) -->
+                        <div class="image-content-wrapper">
+                            <img class="modal-image" src="images/Madcap Figma.png" alt="Madcap Flare Showcase Large" />
+                        </div>
+
+                        <!-- Schließen-Button (oben rechts) -->
+                        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="lightboxModal2" tabindex="-1" aria-labelledby="lightboxModalLabel"
+            aria-hidden="true">
+            <!-- Nutzung von modal-xl und modal-dialog-centered -->
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <!-- Hintergrund des Inhalts ist transparent und ohne Rahmen -->
+                <div class="modal-content bg-transparent border-0">
+                    <!-- Modal Body ohne Padding, mit schwarzem Hintergrund -->
+                    <div class="modal-body modal-body-image">
+
+                        <!-- Das große Bild (simuliert) -->
+                        <div class="image-content-wrapper">
+                            <img class="modal-image" src="images/Madcap Ausgabe.png"
+                                alt="Madcap Flare Showcase Large" />
+                        </div>
+
+                        <!-- Schließen-Button (oben rechts) -->
+                        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="lightboxModal3" tabindex="-1" aria-labelledby="lightboxModalLabel"
+            aria-hidden="true">
+            <!-- Nutzung von modal-xl und modal-dialog-centered -->
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <!-- Hintergrund des Inhalts ist transparent und ohne Rahmen -->
+                <div class="modal-content bg-transparent border-0">
+                    <!-- Modal Body ohne Padding, mit schwarzem Hintergrund -->
+                    <div class="modal-body modal-body-image">
+
+                        <!-- Das große Bild (simuliert) -->
+                        <div class="image-content-wrapper">
+                            <img class="modal-image" src="images/Madcap Ausgabe 2.png"
+                                alt="Madcap Flare Showcase Large" />
+                        </div>
+
+                        <!-- Schließen-Button (oben rechts) -->
+                        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </div>
     <div class="footer">

@@ -1,0 +1,80 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.zeugnis-main {
+    padding: 4rem 0;
+
+    .zeugnis-container {
+        margin: 3rem 0;
+
+        .zeugnis-header {
+            background-color: var.$color-primary;
+            padding: 20px;
+            color:#fff;
+
+            .work-station {
+                font-family: "Roboto Slab", serif;
+                font-weight: 600;
+                font-size: 1.75rem;
+
+                .accent {
+                    color: var.$color-accent;
+                }
+            }
+
+            .work-position {
+                font-size: 1.2rem;
+                margin: 0.5rem 0 0 0
+            }
+
+            .work-time {
+                font-size: 1rem;
+                margin:0;
+            }
+        }
+
+        .zeugnis-content {
+            padding: 20px;
+            border: 1px solid #dedede;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+            .heading{
+                font-family: "Roboto Slab", serif;
+                font-size: 1.2rem;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            .ranking{
+                margin: 1rem 0;
+                .supertitle{
+                    font-family: "Fira Code", monospace;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    margin-bottom: 0.5rem;
+                }
+                .rating{
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                    color: var.$color-accent;
+                }
+            }
+            .zeugnis-station-text{
+                ul{
+                    li{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            .download-button-container{
+                margin: 2rem 0 1rem 0 ;
+                .download-button{
+                    background-color: var.$color-accent;
+                    color:#fff;
+                    padding:10px 30px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

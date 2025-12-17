@@ -19096,10 +19096,9 @@ li {
   font-weight: 900;
   text-shadow: 3px 3px 0 #698F8F;
   text-shadow: 0 0 1px #698F8F, 1px 1px 0 #698F8F, 2px 2px 0 #698F8F, 3px 3px 0 #698F8F, 4px 4px 0 #698F8F, 5px 5px 0 #698F8F, 6px 6px 0 #698F8F, 7px 7px 0 #698F8F, 8px 8px 0 #698F8F, 9px 9px 0 #698F8F, 10px 10px 0 #698F8F, 11px 11px 0 #698F8F, 12px 12px 0 #698F8F, 13px 13px 0 #698F8F, 14px 14px 0 #698F8F, 15px 15px 0 #698F8F, 16px 16px 0 #698F8F, 17px 17px 0 #698F8F, 18px 18px 0 #698F8F, 19px 19px 0 #698F8F, 20px 20px 0 #698F8F, 21px 21px 0 #698F8F, 22px 22px 0 #698F8F, 23px 23px 0 #698F8F, 24px 24px 0 #698F8F, 25px 25px 0 #698F8F;
-  white-space: nowrap;
   display: block;
   max-width: 95vw;
-  font-size: clamp(3rem, 10vw, 15.625vw);
+  font-size: clamp(3rem, 9vw, 15.625vw);
 }
 
 .main-content .learnings {
@@ -19213,39 +19212,403 @@ li {
   color: #D4AC64;
 }
 
-.praxis-card {
+.showcase-container {
+  background-color: #D1C8C2;
+}
+.showcase-container .showcase {
+  padding: 4rem 0;
+}
+.showcase-container .showcase .showcase-step {
+  display: flex;
+  margin: 30px 0;
+  overflow: hidden;
+}
+.showcase-container .showcase .showcase-step .showcase-step-indicator {
+  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #D4AC64;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  z-index: 10;
+}
+.showcase-container .showcase .showcase-step .showcase-step-indicator::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 2px;
+  height: 9999px;
+  background-color: #dedede;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.showcase-container .showcase .showcase-step .showcase-step-content {
+  padding-left: 40px;
+}
+.showcase-container .showcase .showcase-step .showcase-step-content .showcase-step-main {
+  padding: 40px;
+  margin-right: 30px;
+  background-color: #fff;
+  border-top: 3px solid #D4AC64;
+}
+.showcase-container .showcase .showcase-step .showcase-step-content .showcase-step-main .showcase-step-supertitle {
+  font-family: "Fira Code", monospace;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #6c757d;
+  margin-top: 0;
+}
+.showcase-container .showcase .showcase-step .showcase-step-content .showcase-step-main .showcase-step-heading {
+  font-family: "Roboto Slab", monospace;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2A363B;
+  margin-top: 0;
+}
+.showcase-container .showcase .showcase-step .showcase-step-content .showcase-step-main .showcase-step-heading .accent {
+  color: #D4AC64;
+}
+.showcase-container .showcase .showcase-step .showcase-step-content .showcase-step-main .showcase-text {
+  color: rgb(73.8118811881, 94.900990099, 103.6881188119);
+  line-height: 1.6;
+  width: 100%;
+}
+.showcase-container .showcase .showcase-step .showcase-step-content .showcase-image {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.showcase-container .showcase .showcase-step .showcase-step-content .showcase-image:hover {
+  transform: scale(1.02);
+}
+
+.modal-body-image {
+  padding: 0;
+  position: relative;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-body-image .image-content-wrapper .modal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Weißer Schließen-Button */
+.btn-close-white {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.zeugnis-main {
+  padding: 4rem 0;
+}
+.zeugnis-main .zeugnis-container {
+  margin: 3rem 0;
+}
+.zeugnis-main .zeugnis-container .zeugnis-header {
+  background-color: #2A363B;
+  padding: 20px;
+  color: #fff;
+}
+.zeugnis-main .zeugnis-container .zeugnis-header .work-station {
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+.zeugnis-main .zeugnis-container .zeugnis-header .work-station .accent {
+  color: #D4AC64;
+}
+.zeugnis-main .zeugnis-container .zeugnis-header .work-position {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0 0;
+}
+.zeugnis-main .zeugnis-container .zeugnis-header .work-time {
+  font-size: 1rem;
+  margin: 0;
+}
+.zeugnis-main .zeugnis-container .zeugnis-content {
+  padding: 20px;
+  border: 1px solid #dedede;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+.zeugnis-main .zeugnis-container .zeugnis-content .heading {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.zeugnis-main .zeugnis-container .zeugnis-content .ranking {
+  margin: 1rem 0;
+}
+.zeugnis-main .zeugnis-container .zeugnis-content .ranking .supertitle {
+  font-family: "Fira Code", monospace;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.zeugnis-main .zeugnis-container .zeugnis-content .ranking .rating {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #D4AC64;
+}
+.zeugnis-main .zeugnis-container .zeugnis-content .zeugnis-station-text ul li {
+  margin-bottom: 10px;
+}
+.zeugnis-main .zeugnis-container .zeugnis-content .download-button-container {
+  margin: 2rem 0 1rem 0;
+}
+.zeugnis-main .zeugnis-container .zeugnis-content .download-button-container .download-button {
+  background-color: #D4AC64;
+  color: #fff;
+  padding: 10px 30px;
+  text-decoration: none;
+}
+
+.skills-container {
+  padding: 4rem 0;
+}
+.skills-container .skills-content {
   border: 1px solid #dedede;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
   background-color: #fff;
   padding: 40px;
-  margin-bottom: 20px;
 }
-.praxis-card .praxis-text-container .praxis-supertitle {
-  font-family: "Roboto Slab", serif;
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
+@media (max-width: 768px) {
+  .skills-container .skills-content {
+    padding: 20px;
+  }
+}
+.skills-container .skills-content .skills-section {
+  margin-bottom: 3rem;
+}
+.skills-container .skills-content .skills-section .color-secondary {
+  color: #698F8F;
+}
+.skills-container .skills-content .skills-section .color-accent {
   color: #D4AC64;
-  margin-bottom: 10px;
 }
-.praxis-card .praxis-text-container .praxis-heading {
+.skills-container .skills-content .skills-section .skills-heading {
   font-family: "Roboto Slab", serif;
   font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.skills-container .skills-content .skills-section .skills-heading i {
+  font-size: 2rem;
+}
+.skills-container .skills-content .skills-section .skills-row .skill-name {
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+@media (max-width: 768px) {
+  .skills-container .skills-content .skills-section .skills-row .skill-name {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+.skills-container .skills-content .skills-section .skills-row .skill-rating {
+  text-align: right;
+}
+@media (max-width: 768px) {
+  .skills-container .skills-content .skills-section .skills-row .skill-rating {
+    text-align: center;
+  }
+}
+.skills-container .skills-content .skills-section .skills-row .skill-rating .rating-container {
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 15px;
 }
-.praxis-card .praxis-text-container .praxis-text {
+.skills-container .skills-content .skills-section .skills-row .skill-rating .expert-rating {
+  background-color: #698F8F;
+  color: #fff;
+  display: inline-block;
+}
+.skills-container .skills-content .skills-section .skills-row .skill-rating .expert-rating-accent {
+  background-color: #D4AC64;
+  color: #fff;
+  display: inline-block;
+}
+.skills-container .skills-content .skills-section .skills-row .skill-rating .middle-rating {
+  background-color: #698F8F;
+  color: #fff;
+  display: inline-block;
+}
+.skills-container .skills-content .skills-section .skills-row .skill-rating .middle-rating-accent {
+  background-color: #D4AC64;
+  color: #fff;
+  display: inline-block;
+}
+.skills-container .skills-content .skills-section .skills-row .skill-rating .basic-rating {
+  background-color: #e0e0e0;
+  color: #333;
+  display: inline-block;
+}
+
+.cv-container {
+  background-image: url(../../images/Triangle_pattern.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.cv-container .container {
+  padding: 4rem 0;
+}
+.cv-container .container .step {
+  display: flex;
+  margin: 30px 0;
+  overflow: hidden;
+}
+.cv-container .container .step .step-indicator {
+  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .cv-container .container .step .step-indicator {
+    display: none !important;
+  }
+}
+.cv-container .container .step .step-indicator {
+  background-color: #D4AC64;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25em;
+  z-index: 10;
+}
+.cv-container .container .step .step-indicator::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 2px;
+  height: 9999px;
+  background-color: #dedede;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.cv-container .container .step .step-content {
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #dedede;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  margin-left: 20px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .cv-container .container .step .step-content {
+    margin: 0;
+  }
+}
+.cv-container .container .step .step-content .step-timeline {
   font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-.praxis-card .praxis-text-container .praxis-list {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-top: 10px;
-}
-.praxis-card .praxis-text-container .praxis-list li {
+  font-weight: 600;
   margin-bottom: 10px;
+  color: #D4AC64;
+}
+.cv-container .container .step .step-content .step-heading {
+  font-family: "Fira Code", monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2A363B;
+  margin-top: 0;
+}
+.cv-container .container .step .step-content .step-location {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #6D6D6D;
+}
+.cv-container .container .step .step-content .step-text ul {
+  margin: 10px 0;
+}
+.cv-container .container .step .step-content .step-text ul li {
+  margin-bottom: 10px;
+}
+.cv-container .container .step .step-content .step-text .row .col-md-4 .studium-container {
+  background-color: rgba(212, 192, 157, 0.2);
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .cv-container .container .step .step-content .step-text .row .col-md-4 .studium-container {
+    margin-bottom: 10px;
+  }
+}
+.cv-container .container .step .step-content .step-text .row .col-md-4 .studium-container .studium-section-title {
+  font-family: "Roboto", monospace;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #D4AC64;
+  position: relative;
+}
+.cv-container .container .step .step-content .step-text .row .col-md-4 .studium-container .studium-section-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  /* Position unter dem Wort */
+  width: 15%;
+  /* Breite des Strichs (z.B. nur die Hälfte des Wortes) */
+  height: 3px;
+  /* Dicke des Strichs */
+  background-color: #D4AC64;
+  /* Farbe */
+}
+.cv-container .container .step .step-content .step-text .row .col-md-4 .studium-container .knowledge-container {
+  margin: 20px 0 5px;
+}
+.cv-container .container .step .step-content .step-text .row .col-md-4 .studium-container .knowledge-container .knowledge-content {
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  color: #2A363B;
+  padding: 3px 5px;
+  margin: 5px 0;
+  display: inline-block;
+  border-radius: 5px;
+}
+.cv-container .container .step .step-content .step-text .praxis-container {
+  background-color: #F2F2F2;
+  padding: 10px 20px;
+  border-left: 3px solid #D4AC64;
+  margin-top: 20px;
+}
+.cv-container .container .step .step-content .step-text .praxis-container .praxis-title {
+  font-family: "Fira Code", monospace;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2A363B;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cv-container .container .step .step-content .step-text .praxis-container .praxis-text {
+  margin: 10px 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

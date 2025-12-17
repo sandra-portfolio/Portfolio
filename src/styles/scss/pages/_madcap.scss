@@ -22,43 +22,136 @@
     }
 }
 
-.praxis-card {
-    border: 1px solid #dedede;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-    background-color: #fff;
-    padding: 40px;
-    margin-bottom: 20px;;
-    .praxis-text-container {
-        .praxis-supertitle {
-            font-family: "Roboto Slab", serif;
-            font-size: 1rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            color: var.$color-accent;
-            margin-bottom: 10px;
-        }
+.showcase-container {
+    background-color: #D1C8C2;
 
-        .praxis-heading {
-            font-family: "Roboto Slab", serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
+    .showcase {
+        padding: 4rem 0;
 
-        .praxis-text {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+        .showcase-step {
+            // Flexbox für die Ausrichtung der Nummer und des Textes
+            display: flex;
+            margin: 30px 0;
+            overflow: hidden;
 
-        .praxis-list {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-top: 10px;
+            .showcase-step-indicator {
+                // Positionierung und Form des Kreises
+                position: relative;
+                box-sizing: border-box;
+                flex: 0 0 40px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
 
-            li {
-                margin-bottom: 10px;
+                // Farben und Zentrierung der Zahl
+                background-color: var.$color-accent; // Verwende die Akzentfarbe
+                color: #fff; // Weiße Zahl auf dunklem Akzenthintergrund
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                font-weight: bold;
+                font-size: 1.5em;
+                z-index: 10;
+
+                // Das Pseudo-Element für die vertikale Linie
+                &::before {
+                    content: '';
+                    position: absolute;
+
+                    // Startet in der Mitte des Kreises
+                    top: 100%;
+                    left: 50%;
+
+                    // Definiert die Linie
+                    width: 2px;
+                    height: 9999px;
+                    background-color: #dedede;
+
+                    // Zentrierung des Strichs
+                    transform: translateX(-50%);
+                    z-index: 1;
+                }
+            }
+
+            .showcase-step-content {
+                // Abstand links vom vertikalen Strich
+                padding-left: 40px;
+
+
+                .showcase-step-main {
+                    padding: 40px;
+                    margin-right: 30px;
+                    background-color: #fff;
+                    border-top: 3px solid var.$color-accent;
+
+                    .showcase-step-supertitle {
+                        font-family: "Fira Code", monospace;
+                        font-weight: 600;
+                        margin-bottom: 20px;
+                        color: #6c757d;
+                        margin-top: 0;
+
+                    }
+
+                    .showcase-step-heading {
+                        // Die Überschrift verwendet deine Textfarbe
+                        font-family: "Roboto Slab", monospace;
+                        font-weight: 600;
+                        margin-bottom: 20px;
+                        color: var.$color-primary;
+                        margin-top: 0;
+
+                        .accent {
+                            color: var.$color-accent;
+                        }
+                    }
+
+                    .showcase-text {
+                        // Der Fließtext ist etwas heller als die Überschrift
+                        color: lighten(var.$color-primary, 15%);
+                        line-height: 1.6;
+                        width: 100%;
+                    }
+                }
+
+
+                .showcase-image {
+                    width: 100%;
+                    height: auto;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    cursor: pointer;
+                    transition: transform 0.2s;
+
+                    &:hover {
+                        transform: scale(1.02);
+                    }
+
+
+                }
             }
         }
+
     }
+}
+
+.modal-body-image {
+    padding: 0;
+    position: relative;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .image-content-wrapper {
+        .modal-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}
+
+/* Weißer Schließen-Button */
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
 }

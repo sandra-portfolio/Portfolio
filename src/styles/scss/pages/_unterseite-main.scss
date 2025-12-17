@@ -36,6 +36,7 @@
         position: relative;
         z-index: 5;
         padding: 3rem 0;
+        
 
         .heading {
             text-transform: uppercase;
@@ -45,10 +46,9 @@
             font-weight: 900;
             text-shadow: 3px 3px 0 var.$color-secondary;
             @include mix.create-3d-shadow(var.$color-secondary, var.$depth);
-            white-space: nowrap;
             display: block;
             max-width: 95vw;
-            font-size: clamp(3rem, 10vw, 15.625vw),
+            font-size: clamp(3rem, 9vw, 15.625vw);
         }
     }
 }
