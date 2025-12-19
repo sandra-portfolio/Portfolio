@@ -6,7 +6,9 @@
         border-bottom: 1px solid #ededed;
         padding-bottom: 30px;
         margin-bottom: 30px;
-        ;
+        @media (max-width: 768px) {
+            padding:20px;
+        }
 
         .explain-heading {
             font-family: "Roboto Slab", serif;
@@ -14,6 +16,9 @@
             font-weight: 500;
             margin-bottom: 2rem;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .icon-book-open {
@@ -54,6 +59,10 @@
                 font-size: 1.5em;
                 z-index: 10;
 
+                @media (max-width: 768px) {
+                    display: none;
+                }
+
                 // Das Pseudo-Element für die vertikale Linie
                 &::before {
                     content: '';
@@ -77,6 +86,9 @@
             .showcase-step-content {
                 // Abstand links vom vertikalen Strich
                 padding-left: 40px;
+                @media (max-width: 768px) {
+                    padding-left:0;
+                }
 
 
                 .showcase-step-main {
@@ -88,6 +100,7 @@
                     .showcase-step-supertitle {
                         font-family: "Fira Code", monospace;
                         font-weight: 600;
+                        font-size: 1.25rem;
                         margin-bottom: 20px;
                         color: #6c757d;
                         margin-top: 0;
@@ -112,6 +125,12 @@
                         color: lighten(var.$color-primary, 15%);
                         line-height: 1.6;
                         width: 100%;
+                    }
+                    .showcase-list{
+                        i{
+                            color: var.$color-accent;
+                            font-size: 1.5rem;
+                        }
                     }
                 }
 
@@ -142,6 +161,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     .image-content-wrapper {
         .modal-image {
             width: 100%;

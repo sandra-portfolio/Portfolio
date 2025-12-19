@@ -18,7 +18,7 @@
 
 
 // 5. BASE 
-@use 'base/fonts'; // Hier sind die @font-face Regeln und allgemeine Typografie
+@use 'base/fonts';
 @use 'base/typography';
 
 
@@ -28,3 +28,4 @@
 @use 'pages/madcap';
 @use 'pages/zeugnis';
 @use 'pages/cv';
+@use 'pages/wordpress';
