@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Portfolio</title>
+    <link rel="stylesheet" href="styles/css/styles.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="row nav-row">
+            <div class="col-6 logo-container">
+                <img class="logo" src="images/logo.svg" alt="Logo" />
+            </div>
+
+            <div class="col-6 nav-links">
+                <input type="checkbox" id="nav-check" class="nav-check">
+                <label for="nav-check" class="nav-toggle"><i class="icon-menu"></i></label>
+
+                <div class="nav-items-wrapper">
+                    <a href="index.html">Home</a>
+                    <a href="cv.html">Lebenslauf</a>
+                    <a href="arbeitszeugnisse.html">Arbeitszeugnis</a>
+                    <div class="dropdown">
+                        <a href="#projects" class="active">Projekte</a>
+                        <div class="dropdown-menu">
+                            <a href="figma.html">Figma</a>
+                            <a href="webdesign.html">Webdesign</a>
+                            <a href="wordpress.html">Wordpress</a>
+                            <a href="graphics.html">Grafik</a>
+                            <a href="madcap.html">Madcap Flare</a>
+                            <a href="project-website.html">Projekt Website</a>
+                            <a href="weiterbildungen.html">Weiterbildungen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-wrapper">
+        <div class="hero-bg-left-page"></div>
+        <div class="hero-bg-right-page"></div>
+
+        <div class="container hero-content">
+            <div class="heading">
+                Weiterbildungen
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <div class="container learnings mt-5">
+            <div class="heading">1. UX/UI Design Fundamente</div>
+            <div class="learnings-content">
+                <div class="topic-explain">
+                    <div class="explain-heading"><i class="icon-book-open"></i> Kontext und Relevanz</div>
+                    <div class="explain-text">
+                        In dieser Weiterbildung habe ich das theoretische und praktische Fundament für
+                        nutzerzentrierte Gestaltung gelegt. Der Fokus lag auf dem Human Centered Design (HCD) Prozess,
+                        um digitale Produkte systematisch aus Nutzersicht zu entwickeln, Usability-Hürden
+                        frühzeitig zu erkennen und Barrierefreiheit von Anfang an mitzudenken.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 team">
+                        <i class="icon-lightbulb"></i>
+                        <div class="learnings-heading">Was ich gelernt habe</div>
+                        <div class="learnings-text">
+                            <ul>
+                                <li><b>User Research & Personas:</b> Nutzerbedürfnisse analysieren und Zielgruppen
+                                    definieren.</li>
+                                <li><b>Wireframing & Prototyping:</b> Erstellung von Low-Fidelity bis High-Fidelity
+                                    Entwürfen.</li>
+                                <li><b>Usability Testing:</b> Erkennen von Usability-Problemen durch gezielte
+                                    Nutzertests.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 workway">
+                        <i class="icon-award"></i>
+                        <div class="learnings-heading">Abschlussprojekt & Zertifikat</div>
+                        <div class="learnings-text">
+                            <p><b>Projekt:</b> Konzeption einer mobilen App-Schnittstelle von der ersten Nutzerbefragung
+                                bis zum klickbaren Prototypen.</p>
+                            <a href="images/zeugnisse/Zertifikat_UI_UX_Design.pdf" download class="download-button"
+                                target="_blank">
+                                Zertifikat ansehen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showcase-container">
+            <div class="container showcase">
+                <div class="showcase-step-content">
+                    <!-- 1. Zeile: Der Text geht über die volle Breite -->
+                    <div class="row mb-4">
+                        <div class="col-12 showcase-step-main text-center text-lg-start">
+                            <h2 class="showcase-step-heading">UX/UI Projektergebnis</h2>
+                            <div class="showcase-text">Der interaktive Prototyp zeigt den gesamten User Flow und legt
+                                besonderen Wert auf Barrierefreiheit und intuitive Klickwege.</div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Zeile: Die Medien (Bild & Video) nebeneinander -->
+                    <div class="row g-4 justify-content-center align-items-center">
+
+                        <!-- Das Bild (nimmt am PC die Hälfte des Platzes ein) -->
+                        <div class="col-md-6 col-lg-5 text-center">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                                <img class="showcase-image img-fluid rounded shadow-sm" src="images/UX_Kurs.png"
+                                    alt="UX/UI Design Showcase" />
+                            </a>
+                            <p class="text-muted small italic mt-2">Klicken zum Vergrößern</p>
+                        </div>
+
+                        <!-- Das Hochformat-Video (nimmt am PC ebenfalls die Hälfte ein, bleibt aber schlank) -->
+                        <div class="col-md-6 col-lg-5 text-center">
+                            <div class="video-container mx-auto" style="max-width: 260px;">
+                                <video class="img-fluid rounded shadow-sm" controls playsinline preload="metadata">
+                                    <source src="images/KitchenUnit.mp4" type="video/mp4">
+                                    Ihr Browser unterstützt dieses Video leider nicht.
+                                </video>
+                                <p class="text-muted small italic mt-2">Interaktiver User Flow (Video)</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. SEKTION: MEDIENGESTALTUNG -->
+        <div class="container learnings mt-5">
+            <div class="heading">2. Mediengestaltung (Digital & Print)</div>
+            <div class="learnings-content">
+                <div class="topic-explain">
+                    <div class="explain-heading"><i class="icon-book-open"></i> Kontext und Relevanz</div>
+                    <div class="explain-text">
+                        In dieser Weiterbildung habe ich die visuelle Basis für meine kreative Arbeit gefestigt. Der
+                        Fokus lag auf den handwerklichen Grundlagen der Gestaltung: von Reinzeichnung und pixelgenauer
+                        Bildbearbeitung über harmonische Typografie bis hin zu medienübergreifenden Farbkonzepten
+                        (RGB/CMYK), um visuelle Botschaften präzise zu transportieren.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 team">
+                        <i class="icon-lightbulb"></i>
+                        <div class="learnings-heading">Was ich gelernt habe</div>
+                        <div class="learnings-text">
+                            <ul>
+                                <li><b>Layout & Typografie:</b> Satzbau, Gestaltungsraster und der bewusste Umgang mit
+                                    Schriftarten.</li>
+                                <li><b>Bildbearbeitung & Vektoren:</b> Professionelle Composings in Photoshop und
+                                    Vektorgrafiken in Illustrator.</li>
+                                <li><b>Medienproduktion:</b> Erstellung druckfähiger Daten sowie optimierter Assets für
+                                    digitale Kanäle.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 workway">
+                        <i class="icon-award"></i>
+                        <div class="learnings-heading">Abschlussprojekt & Zertifikat</div>
+                        <div class="learnings-text">
+                            <p><b>Projekt:</b> Konzeption und Umsetzung einer medienübergreifenden Branding-Kampagne
+                                inklusive Corporate Design und Print-Assets.</p>
+                            <a href="images/zeugnisse/Zertifikat_Mediengestaltung.pdf" download class="download-button"
+                                target="_blank">
+                                Zertifikat ansehen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showcase-container">
+            <div class="container showcase">
+                <div class="showcase-step-content">
+                    <!-- 1. Zeile: Der Text geht über die volle Breite -->
+                    <div class="row mb-4">
+                        <div class="col-12 showcase-step-main text-center text-lg-start">
+                            <h2 class="showcase-step-heading">Kreatives Gesamtkonzept & Branding</h2>
+                            <div class="showcase-text">Das fertige Key Visual verbindet harmonische Typografie mit
+                                sauber ausgearbeiteten Grafiken zu einem stimmigen Markenbild für Print und Web.</div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Zeile: Die Medien (Bild & Video) nebeneinander -->
+                    <div class="row g-4 justify-content-center align-items-start">
+                        <!-- Das Bild 1 -->
+                        <div class="col-md-6 col-lg-5 text-center">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                                <img class="showcase-image img-fluid rounded shadow-sm" src="images/Adobe_1.png"
+                                    alt="Mediengestaltung Showcase" />
+                            </a>
+                            <p class="text-muted small italic mt-2">Klicken zum Vergrößern</p>
+                        </div>
+
+                        <!-- Das Bild 2 -->
+                        <div class="col-md-6 col-lg-5 text-center">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                                <img class="showcase-image img-fluid rounded shadow-sm" src="images/Adobe_2.png"
+                                    alt="Mediengestaltung Showcase" />
+                            </a>
+                            <p class="text-muted small italic mt-2">Klicken zum Vergrößern</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. SEKTION: JAVASCRIPT -->
+        <div class="container learnings mt-5">
+            <div class="heading">3. JavaScript & Interaktive Webentwicklung</div>
+            <div class="learnings-content">
+                <div class="topic-explain">
+                    <div class="explain-heading"><i class="icon-book-open"></i> Kontext und Relevanz</div>
+                    <div class="explain-text">
+                        Statische Layouts zum Leben erwecken: In diesem Modul habe ich die programmtechnischen
+                        Grundlagen gelernt, um Benutzeroberflächen dynamisch zu gestalten. Das Verständnis von Logik,
+                        Datenstrukturen und der DOM-Manipulation hilft mir dabei, komplexe Interaktionen und Animationen
+                        auf Code-Ebene nachzuvollziehen und selbst umzusetzen.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 team">
+                        <i class="icon-lightbulb"></i>
+                        <div class="learnings-heading">Was ich gelernt habe</div>
+                        <div class="learnings-text">
+                            <ul>
+                                <li><b>Programmierlogik:</b> Variablen, Schleifen, Funktionen und objektorientierte
+                                    Ansätze.</li>
+                                <li><b>DOM-Manipulation:</b> Dynamisches Ändern von HTML-Inhalten und CSS-Styles per
+                                    Klick oder Scrollen.</li>
+                                <li><b>Event Handling:</b> Abfangen von User-Interaktionen (Klicks, Tastatureingaben,
+                                    Touch-Events).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 workway">
+                        <i class="icon-award"></i>
+                        <div class="learnings-heading">Abschlussprojekt & Zertifikat</div>
+                        <div class="learnings-text">
+                            <p><b>Projekt:</b> Programmierung einer interaktiven Web-Applikation mit dynamischer
+                                Filterfunktion und animierten UI-Zuständen.</p>
+                            <a href="images/zeugnisse/Zertifikat_JavaScript.pdf" download class="download-button"
+                                target="_blank">
+                                Zertifikat ansehen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showcase-container">
+            <div class="container showcase">
+                <div class="showcase-step-content">
+                    <!-- 1. Zeile: Der Text geht über die volle Breite -->
+                    <div class="row mb-4">
+                        <div class="col-12 showcase-step-main text-center text-lg-start">
+                            <h2 class="showcase-step-heading">Funktionale Logik & Dynamisches UI</h2>
+                            <div class="showcase-text">Die Kombination aus sauberem Code und Event-Listenern sorgt
+                                dafür, dass die Oberfläche ohne Neuladen der Seite blitzschnell auf Eingaben des Nutzers
+                                reagiert.</div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Zeile: Die Medien (Bild & Video) nebeneinander -->
+                    <div class="row g-4 justify-content-center align-items-start">
+
+                        <!-- Das Hochformat-Video -->
+                        <div class="text-center">
+                            <div class="video-container mx-auto">
+                                <video class="img-fluid rounded shadow-sm" controls playsinline preload="metadata">
+                                    <source src="images/JavaScript.mp4" type="video/mp4">
+                                    Ihr Browser unterstützt dieses Video leider nicht.
+                                </video>
+                                <p class="text-muted small italic mt-2">Interaktive Features in Aktion (Video)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. SEKTION: ADVANCED UI DESIGN -->
+        <div class="container learnings mt-5">
+            <div class="heading">4. Advanced UI Design & Design Systems</div>
+            <div class="learnings-content">
+                <div class="topic-explain">
+                    <div class="explain-heading"><i class="icon-book-open"></i> Kontext und Relevanz</div>
+                    <div class="explain-text">
+                        Aufbauend auf meinen UX- und Programmierkenntnissen habe ich mich hier auf die visuelle
+                        Perfektion und Skalierbarkeit digitaler Produkte spezialisiert. Der Fokus lag auf dem Aufbau
+                        konsistenter UI-Kits in Figma, fortgeschrittenen Auto-Layouts, responsive Grids sowie der
+                        sauberen Dokumentation für die Übergabe (Hand-off) an die Entwicklung.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 team">
+                        <i class="icon-lightbulb"></i>
+                        <div class="learnings-heading">Was ich gelernt habe</div>
+                        <div class="learnings-text">
+                            <ul>
+                                <li><b>Component Architecture:</b> Erstellung komplexer, variantenreicher UI-Komponenten
+                                    mit logischen States.</li>
+                                <li><b>Design System Governance:</b> Systematischer Aufbau von Bibliotheken mit Styles
+                                    und Tokens.</li>
+                                <li><b>Advanced Microinteractions:</b> Planung feinsinniger Übergänge und responsiver
+                                    UI-Animationen.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 workway">
+                        <i class="icon-award"></i>
+                        <div class="learnings-heading">Abschlussprojekt & Zertifikat</div>
+                        <div class="learnings-text">
+                            <p><b>Projekt:</b> Konzeption eines vollständigen High-Fidelity Design Systems für eine
+                                komplexe Multi-Plattform-Applikation.</p>
+                            <a href="images/zeugnisse/Zertifikat_UI_Design.pdf" download class="download-button"
+                                target="_blank">
+                                Zertifikat ansehen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showcase-container">
+            <div class="container showcase">
+                <div class="showcase-step-content">
+                    <!-- 1. Zeile: Der Text geht über die volle Breite -->
+                    <div class="row mb-4">
+                        <div class="col-12 showcase-step-main text-center text-lg-start">
+                            <h2 class="showcase-step-heading">Pixelperfektes UI-System</h2>
+                            <div class="showcase-text">Das finale UI-Design demonstriert ein sauberes, ästhetisches
+                                Raster und ein kompromisslos konsistentes Zusammenspiel aus Farben, Typografie und
+                                Weißraum.</div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Zeile: Die Medien (Bild & Video) nebeneinander -->
+                    <div class="row g-4 justify-content-center align-items-start">
+                        <!-- Das Bild -->
+                        <div class="col-md-6 col-lg-5 text-center">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#projectModal5">
+                                <img class="showcase-image img-fluid rounded shadow-sm" src="images/UI_Kurs.png"
+                                    alt="UI Design Showcase" />
+                            </a>
+                            <p class="text-muted small italic mt-2">Klicken zum Vergrößern</p>
+                        </div>
+
+                        <!-- Das Hochformat-Video -->
+                        <div class="col-md-6 col-lg-5 text-center">
+                            <div class="video-container mx-auto">
+                                <video class="img-fluid rounded shadow-sm" controls playsinline preload="metadata">
+                                    <source src="images/Landing_Page_Zoo.mp4" type="video/mp4">
+                                    Ihr Browser unterstützt dieses Video leider nicht.
+                                </video>
+                                <p class="text-muted small italic mt-2">Interaktiver User Flow (Video)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body modal-body-image text-center position-relative">
+                    <img class="modal-image" style="width: 100%; height: auto;" src="images/UX_Kurs.png"
+                        alt="UX/UI Large" /><button type="button"
+                        class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal für Sektion 2: Mediengestaltung -->
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body modal-body-image text-center position-relative">
+                    <img class="modal-image" style="width: 100%; height: auto;" src="images/Adobe_1.png"
+                        alt="Mediengestaltung Large" />
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body modal-body-image text-center position-relative">
+                    <img class="modal-image" style="width: 100%; height: auto;" src="images/Adobe_2.png"
+                        alt="Mediengestaltung Large" />
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal für Sektion 4: Advanced UI Design -->
+    <div class="modal fade" id="projectModal5" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body modal-body-image text-center position-relative">
+                    <img class="modal-image" style="width: 100%; height: auto;" src="images/UI_Kurs.png"
+                        alt="UI Design Large" />
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-md-6 footer-text">
+                    &copy; 2026 Sandra Henkensiefken. Alle Rechte vorbehalten.
+                </div>
+                <div class="col-md-6 footer-links">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="styles/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

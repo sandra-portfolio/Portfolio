@@ -1,0 +1,4 @@
+Scss kompilieren eingabe in terminal
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+npx sass ./styles/scss/styles.scss ./styles/css/styles.css --watch
