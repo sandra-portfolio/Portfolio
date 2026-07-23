@@ -19717,7 +19717,10 @@ li {
   text-decoration: none;
 }
 
-.showcase-container .showcase .showcase-step-content {
+.showcase-container-learning {
+  background-color: #D1C8C2;
+}
+.showcase-container-learning .showcase-learning .showcase-step-content-learning {
   display: inline-block;
   margin: 30px 0;
   overflow: hidden;
