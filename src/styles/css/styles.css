@@ -18903,30 +18903,119 @@ li {
   z-index: 6;
 }
 
-.main-content .heading {
+.main-content .container-learnings {
+  background-color: #f4f6f8;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 20px 24px;
+}
+.main-content .container-learnings .container-content {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.main-content .container-learnings .container-content .section-topic {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #a18a4a;
+  text-transform: uppercase;
+}
+.main-content .container-learnings .container-content .section-heading {
+  margin: 4px 0 8px 0;
+  font-size: 18px;
+  color: #1e293b;
+}
+.main-content .container-learnings .container-content .learnings-points {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.main-content .container-learnings .container-content .learnings-points span {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.main-content .container-learnings .container-content .button-learnings {
+  display: inline-block;
+  background-color: #2b3a42;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+.main-content .container-learnings .container-content .button-learnings:hover {
+  background-color: rgb(22.880733945, 30.8623853211, 35.119266055);
+}
+@media (max-width: 768px) {
+  .main-content .container-learnings {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.main-content .learnings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.main-content .learnings-row .learnings-text {
+  max-width: 600px;
+}
+.main-content .learnings-row .learnings-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: #2A363B;
+}
+.main-content .learnings-row .learnings-text .download-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #D4AC64;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.main-content .learnings-row .learnings-text .download-button:hover {
+  background-color: rgb(200.9242424242, 150.6212121212, 60.0757575758);
+}
+
+.heading {
   font-family: "Roboto Slab", serif;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
-.main-content .about-me {
+
+.about-me {
   padding: 4rem 0;
 }
-.main-content .about-me .row {
+.about-me .row {
   margin: 0;
 }
 @media (max-width: 768px) {
-  .main-content .about-me .row .philosophie-text {
+  .about-me .row .philosophie-text {
     padding: 0;
   }
 }
-.main-content .about-me .row .philosophie-text .text-box {
+.about-me .row .philosophie-text .text-box {
   background-color: #698F8F;
   color: #fff;
   padding: 2rem;
 }
-.main-content .about-me .row .philosophie-text .text-box .supertitle {
+.about-me .row .philosophie-text .text-box .supertitle {
   font-family: "Fira Code", monospace;
   font-weight: 600;
   font-size: 1rem;
@@ -18935,56 +19024,57 @@ li {
   color: #D1C8C2;
   margin-bottom: 0.5rem;
 }
-.main-content .about-me .row .philosophie-text .text-box .philosophie-heading {
+.about-me .row .philosophie-text .text-box .philosophie-heading {
   font-family: "Roboto Slab", serif;
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.main-content .about-me .row .philosophie-text .text-box .philosophie-heading .accent {
+.about-me .row .philosophie-text .text-box .philosophie-heading .accent {
   color: #D4AC64;
 }
-.main-content .about-me .row .philosophie-text .text-box .philosophie-list .row {
+.about-me .row .philosophie-text .text-box .philosophie-list .row {
   margin: 15px 0 0;
 }
-.main-content .about-me .row .philosophie-text .text-box .philosophie-list .row .col-1 {
+.about-me .row .philosophie-text .text-box .philosophie-list .row .col-1 {
   padding: 0;
 }
-.main-content .about-me .row .philosophie-text .text-box .philosophie-list .row .col-1 .list-icon {
+.about-me .row .philosophie-text .text-box .philosophie-list .row .col-1 .list-icon {
   color: #D4AC64;
   font-size: 25px;
 }
-.main-content .about-me .row .about-me-text {
+.about-me .row .about-me-text {
   text-align: justify;
   padding: 0 45px;
 }
-.main-content .about-me .row .about-me-text .intro {
+.about-me .row .about-me-text .intro {
   font-size: 1.3rem;
   font-weight: 700;
 }
 @media (max-width: 768px) {
-  .main-content .about-me .row .about-me-text {
+  .about-me .row .about-me-text {
     margin-top: 30px;
     padding: 0 15px;
   }
 }
-.main-content .personal-information {
+
+.personal-information {
   background-color: #D1C8C2;
 }
 @media (max-width: 768px) {
-  .main-content .personal-information {
+  .personal-information {
     padding: 20px;
   }
 }
-.main-content .personal-information .container {
+.personal-information .container {
   padding: 4rem 0;
 }
-.main-content .personal-information .container .step {
+.personal-information .container .step {
   display: flex;
   margin: 30px 0;
   overflow: hidden;
 }
-.main-content .personal-information .container .step .step-indicator {
+.personal-information .container .step .step-indicator {
   position: relative;
   box-sizing: border-box;
   flex: 0 0 40px;
@@ -19000,7 +19090,7 @@ li {
   font-size: 1.5em;
   z-index: 10;
 }
-.main-content .personal-information .container .step .step-indicator::before {
+.personal-information .container .step .step-indicator::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -19011,63 +19101,64 @@ li {
   transform: translateX(-50%);
   z-index: 1;
 }
-.main-content .personal-information .container .step .step-content {
+.personal-information .container .step .step-content {
   padding-left: 20px;
 }
-.main-content .personal-information .container .step .step-content .step-heading {
+.personal-information .container .step .step-content .step-heading {
   font-family: "Fira Code", monospace;
   font-weight: 600;
   margin-bottom: 20px;
   color: #2A363B;
   margin-top: 0;
 }
-.main-content .personal-information .container .step .step-content p {
+.personal-information .container .step .step-content p {
   color: rgb(73.8118811881, 94.900990099, 103.6881188119);
   line-height: 1.6;
   width: 80%;
 }
-.main-content .work-samples {
+
+.work-samples {
   background-image: url(../../images/Triangle_pattern.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
-.main-content .work-samples .container {
+.work-samples .container {
   padding: 4rem 0;
 }
-.main-content .work-samples .container .row {
+.work-samples .container .row {
   margin: 15px 0;
 }
 @media (max-width: 768px) {
-  .main-content .work-samples .container .row {
+  .work-samples .container .row {
     margin: 0;
   }
 }
 @media (max-width: 768px) {
-  .main-content .work-samples .container .row .card-content {
+  .work-samples .container .row .card-content {
     margin-bottom: 15px;
   }
 }
-.main-content .work-samples .container .row .card-content .card {
+.work-samples .container .row .card-content .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.main-content .work-samples .container .row .card-content .card:hover {
+.work-samples .container .row .card-content .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-.main-content .work-samples .container .row .card-content .card:hover .arrow-icon {
+.work-samples .container .row .card-content .card:hover .arrow-icon {
   color: #D4AC64;
 }
-.main-content .work-samples .container .row .card-content .custom-card-shadow {
+.work-samples .container .row .card-content .custom-card-shadow {
   border: 1px solid #dedede;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
-.main-content .work-samples .container .row .card-content .custom-card-shadow i {
+.work-samples .container .row .card-content .custom-card-shadow i {
   font-size: 30px;
 }
-.main-content .work-samples .container .row .card-content .custom-card-shadow .arrow-icon {
+.work-samples .container .row .card-content .custom-card-shadow .arrow-icon {
   font-size: 24px;
 }
-.main-content .work-samples .container .row .card-content .custom-card-shadow .card-text {
+.work-samples .container .row .card-content .custom-card-shadow .card-text {
   color: rgb(73.8118811881, 94.900990099, 103.6881188119);
   font-size: 0.9em;
 }
